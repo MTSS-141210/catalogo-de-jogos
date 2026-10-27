@@ -1,3 +1,4 @@
+
 const jogos = [
   { id: 1,  titulo: "Hollow Knight",         categoria: "Aventura", ano: 2017, plataforma: "PC, Switch, PS4", nota: 9.4, cores: ["#1f2a60", "#7b2fe0"],
     descricao: "Explore o reino subterrâneo de Hallownest em um metroidvania desenhado à mão, com combates desafiadores, chefes memoráveis e uma atmosfera melancólica." },
@@ -22,9 +23,12 @@ const jogos = [
   { id: 11, titulo: "Minecraft",             categoria: "Simulação", ano: 2011, plataforma: "Todas", nota: 9.1, cores: ["#256d3a", "#3d1a78"],
     descricao: "Mundo de blocos onde você coleta recursos, constrói qualquer coisa que imaginar e sobrevive à noite, sozinho ou com amigos." },
   { id: 12, titulo: "Hades II: Ecos",        categoria: "Aventura", ano: 2024, plataforma: "PC", nota: 8.9, cores: ["#2b0b4d", "#e11d48"],
-    descricao: "Título fictício usado como exemplo: uma aventura de exploração com feitiços, chefes e escolhas que alteram o caminho da jornada." }
+    descricao: "Título fictício usado como exemplo: uma aventura de exploração com feitiços, chefes e escolhas que alteram o caminho da jornada." },
+  { id: 13, titulo: "Resident Evil 4",       categoria: "Terror",   ano: 2023, plataforma: "PC, PS5, Xbox Series", nota: 9.0, cores: ["#2a0a12", "#e11d48"],
+    descricao: "Refilmagem do clássico de sobrevivência em que o agente Leon S. Kennedy precisa resgatar a filha do presidente em uma vila isolada, com combate tenso, recursos escassos e muita ação." }
 ];
 
+// 2) ESTADO --------------------------------------------------
 const estado = {
   categoria: "Todos",
   busca: "",
@@ -34,6 +38,7 @@ const estado = {
   jogoAberto: null
 };
 
+// 3) REFERÊNCIAS AO DOM -------------------------------------
 const $lista = document.getElementById("listaJogos");
 const $filtros = document.getElementById("filtrosCategoria");
 const $busca = document.getElementById("busca");
@@ -44,6 +49,7 @@ const $contador = document.getElementById("contadorFavoritos");
 const $btnFav = document.getElementById("btnVerFavoritos");
 const modalJogo = new bootstrap.Modal(document.getElementById("modalJogo"));
 
+// 4) FUNÇÕES -------------------------------------------------
 const gradiente = (cores) => `linear-gradient(135deg, ${cores[0]}, ${cores[1]})`;
 
 function salvarFavoritos() {
@@ -141,6 +147,7 @@ function abrirDetalhes(id) {
   modalJogo.show();
 }
 
+// 5) EVENTOS -------------------------------------------------
 $filtros.addEventListener("click", (e) => {
   const chip = e.target.closest(".chip");
   if (!chip) return;
@@ -169,6 +176,7 @@ $btnFav.addEventListener("click", () => {
 
 document.getElementById("modalFavorito").addEventListener("click", () => alternarFavorito(estado.jogoAberto));
 
+// 6) INICIALIZAÇÃO ------------------------------------------
 renderizarEstatisticas();
 renderizarFiltros();
 salvarFavoritos();

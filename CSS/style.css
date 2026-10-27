@@ -142,7 +142,7 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; 
 .game-titulo { font-size: 1.15rem; font-weight: 700; margin-bottom: .4rem; }
 .game-desc {
   color: var(--texto-suave); font-size: .92rem; margin-bottom: 1rem;
-  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  display: -webkit-box; line-clamp: 3; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
 }
 .game-body .btn { margin-top: auto; }
 
