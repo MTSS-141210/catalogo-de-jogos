@@ -1,0 +1,173 @@
+/* ===== Identidade visual: roxo (principal), preto (secundária), vermelho (toques) ===== */
+:root {
+  --roxo-900: #1a0b2e;
+  --roxo-700: #3d1a78;
+  --roxo-500: #7b2fe0;
+  --roxo-300: #b388ff;
+  --preto: #070709;
+  --grafite: #131118;
+  --vermelho: #e11d48;
+  --texto: #ece8f5;
+  --texto-suave: #a69fb8;
+  --borda: #2a2433;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--preto);
+  color: var(--texto);
+}
+
+h1, h2, h3, h4, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; }
+
+.text-muted-arcanum { color: var(--texto-suave); }
+
+/* ===== Navegação ===== */
+.app-nav {
+  background: rgba(7, 7, 9, .92);
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid var(--roxo-500);
+}
+.navbar-brand { font-weight: 800; font-size: 1.5rem; color: var(--roxo-300) !important; letter-spacing: .5px; }
+.navbar-brand::after { content: "."; color: var(--vermelho); }
+.nav-link { color: var(--texto) !important; }
+.nav-link:hover, .nav-link:focus-visible { color: var(--roxo-300) !important; }
+
+.btn-fav-nav {
+  border: 1px solid var(--vermelho);
+  color: var(--texto);
+  border-radius: 999px;
+}
+.btn-fav-nav:hover, .btn-fav-nav[aria-pressed="true"] { background: var(--vermelho); color: #fff; }
+.btn-fav-nav .badge { background: #fff; color: var(--vermelho); }
+
+/* ===== Hero ===== */
+.hero {
+  padding: 140px 0 80px;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(123, 47, 224, .45), transparent 45%),
+    linear-gradient(180deg, var(--roxo-900) 0%, var(--preto) 100%);
+}
+.hero-title { font-weight: 800; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.1; margin-bottom: 1rem; }
+.hero-text { color: var(--texto-suave); font-size: 1.15rem; max-width: 52ch; margin-bottom: 1.8rem; }
+
+.hero-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  background: var(--grafite);
+  border: 1px solid var(--borda);
+  border-left: 4px solid var(--vermelho);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+.hero-stats strong { display: block; font-family: 'Bricolage Grotesque', sans-serif; font-size: 2.2rem; color: var(--roxo-300); }
+.hero-stats span { color: var(--texto-suave); font-size: .9rem; }
+
+/* ===== Botões ===== */
+.btn-arcanum {
+  background: var(--roxo-500); border: 1px solid var(--roxo-500);
+  color: #fff; font-weight: 700; border-radius: 8px;
+}
+.btn-arcanum:hover, .btn-arcanum:focus-visible { background: var(--roxo-700); border-color: var(--roxo-300); color: #fff; }
+
+.btn-outline-arcanum {
+  border: 1px solid var(--roxo-300); color: var(--roxo-300); border-radius: 8px;
+}
+.btn-outline-arcanum:hover { background: var(--roxo-300); color: var(--preto); }
+
+/* ===== Seções ===== */
+.section-title { font-weight: 800; font-size: clamp(1.6rem, 3vw, 2.2rem); }
+.section-title::before {
+  content: ""; display: inline-block; width: 10px; height: 1.1em;
+  background: var(--vermelho); margin-right: .5rem; vertical-align: -.15em; border-radius: 2px;
+}
+
+.filtros-busca { min-width: min(100%, 380px); }
+.form-control, .form-select {
+  background-color: var(--grafite); color: var(--texto);
+  border: 1px solid var(--borda);
+}
+.form-control:focus, .form-select:focus {
+  background-color: var(--grafite); color: var(--texto);
+  border-color: var(--roxo-500); box-shadow: 0 0 0 .2rem rgba(123, 47, 224, .35);
+}
+.form-control::placeholder { color: var(--texto-suave); }
+
+/* ===== Filtros de categoria ===== */
+.chip {
+  background: transparent; color: var(--texto);
+  border: 1px solid var(--borda); border-radius: 999px;
+  padding: .4rem 1rem; font-weight: 500; cursor: pointer;
+  transition: background .2s, border-color .2s;
+}
+.chip:hover { border-color: var(--roxo-300); }
+.chip.ativo { background: var(--roxo-500); border-color: var(--roxo-500); color: #fff; }
+
+/* ===== Cards ===== */
+.game-card {
+  background: var(--grafite);
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  overflow: hidden;
+  height: 100%;
+  display: flex; flex-direction: column;
+  transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+.game-card:hover { transform: translateY(-6px); border-color: var(--roxo-500); box-shadow: 0 10px 30px rgba(123, 47, 224, .3); }
+
+.game-capa {
+  height: 150px; position: relative;
+  display: flex; align-items: flex-end; padding: .9rem;
+  font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 1.5rem; line-height: 1.05;
+  color: #fff; text-shadow: 0 2px 8px rgba(0, 0, 0, .6);
+}
+.game-nota {
+  position: absolute; top: .7rem; left: .7rem;
+  background: var(--preto); color: #fff; border-left: 3px solid var(--vermelho);
+  padding: .15rem .55rem; font-weight: 700; font-size: .85rem; border-radius: 4px;
+}
+.btn-coracao {
+  position: absolute; top: .5rem; right: .5rem;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(7, 7, 9, .75); border: 1px solid var(--borda);
+  color: #fff; font-size: 1.2rem; line-height: 1;
+  transition: transform .15s, background .2s;
+}
+.btn-coracao:hover { transform: scale(1.12); }
+.btn-coracao.ativo { background: var(--vermelho); border-color: var(--vermelho); }
+
+.game-body { padding: 1rem; display: flex; flex-direction: column; flex: 1; }
+.game-titulo { font-size: 1.15rem; font-weight: 700; margin-bottom: .4rem; }
+.game-desc {
+  color: var(--texto-suave); font-size: .92rem; margin-bottom: 1rem;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.game-body .btn { margin-top: auto; }
+
+.tag {
+  display: inline-block; padding: .15rem .6rem; border-radius: 999px;
+  background: var(--roxo-900); color: var(--roxo-300);
+  border: 1px solid var(--roxo-700); font-size: .8rem;
+}
+.tag-vermelha { background: rgba(225, 29, 72, .12); color: #ff7a93; border-color: var(--vermelho); }
+
+.estado-vazio {
+  text-align: center; padding: 3rem 1rem; margin-top: 1rem;
+  border: 1px dashed var(--vermelho); border-radius: 12px; color: var(--texto-suave);
+}
+
+/* ===== Sobre / Rodapé ===== */
+.sobre { background: var(--grafite); border-top: 1px solid var(--borda); border-bottom: 1px solid var(--borda); }
+footer { color: var(--texto-suave); }
+
+/* ===== Modal ===== */
+.modal-content { background: var(--grafite); color: var(--texto); border: 1px solid var(--roxo-500); border-radius: 14px; overflow: hidden; }
+.modal-capa { height: 120px; }
+
+/* ===== Acessibilidade ===== */
+:focus-visible { outline: 3px solid var(--roxo-300); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}

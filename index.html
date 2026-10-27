@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Catálogo de jogos com busca, categorias, favoritos e descrições.">
+  <title>Arcanum | Catálogo de Jogos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+  <!-- NAVEGAÇÃO -->
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top app-nav" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand" href="#inicio">Arcanum</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto align-items-md-center gap-md-2">
+            <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+            <li class="nav-item">
+              <button type="button" class="btn btn-sm btn-fav-nav" id="btnVerFavoritos" aria-pressed="false">
+                ♥ Favoritos <span class="badge" id="contadorFavoritos">0</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <h1 class="hero-title">Encontre o próximo jogo que vai te prender por horas.</h1>
+            <p class="hero-text">Explore a coleção por categoria, leia a descrição de cada título e salve seus favoritos para jogar depois.</p>
+            <a href="#catalogo" class="btn btn-arcanum btn-lg">Ver catálogo</a>
+          </div>
+          <div class="col-lg-5">
+            <div class="hero-stats" aria-label="Resumo do catálogo">
+              <div><strong id="statTotal">0</strong><span>jogos</span></div>
+              <div><strong id="statCategorias">0</strong><span>categorias</span></div>
+              <div><strong id="statNota">0</strong><span>nota média</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section id="catalogo" class="py-5">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4">
+          <div>
+            <h2 class="section-title mb-1">Catálogo</h2>
+            <p class="text-muted-arcanum mb-0" id="resultadoInfo" aria-live="polite"></p>
+          </div>
+          <div class="row g-2 filtros-busca">
+            <div class="col-7">
+              <label for="busca" class="visually-hidden">Buscar jogo</label>
+              <input type="search" id="busca" class="form-control" placeholder="Buscar por nome...">
+            </div>
+            <div class="col-5">
+              <label for="ordenar" class="visually-hidden">Ordenar por</label>
+              <select id="ordenar" class="form-select">
+                <option value="nome">Nome (A-Z)</option>
+                <option value="nota">Maior nota</option>
+                <option value="ano">Mais recentes</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-wrap gap-2 mb-4" id="filtrosCategoria" role="group" aria-label="Filtrar por categoria"></div>
+
+        <div class="row g-4" id="listaJogos"></div>
+
+        <div class="estado-vazio d-none" id="estadoVazio">
+          <p class="mb-1 fw-bold">Nenhum jogo encontrado.</p>
+          <p class="mb-0">Tente outro nome ou volte para a categoria “Todos”.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="py-5 sobre">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <h2 class="section-title">Sobre o projeto</h2>
+            <p>Arcanum é um catálogo de jogos feito para estudo de HTML, CSS, Bootstrap e JavaScript. Os dados ficam em uma lista no código e a página é montada dinamicamente.</p>
+          </div>
+          <div class="col-md-6">
+            <h3 class="h5">Como usar</h3>
+            <ul class="mb-0">
+              <li>Clique em uma categoria para filtrar.</li>
+              <li>Use a busca e a ordenação para refinar a lista.</li>
+              <li>Toque no coração para favoritar.</li>
+              <li>Clique em “Detalhes” para ler a descrição completa.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-4 text-center">
+    <small>© 2026 Arcanum · Projeto acadêmico · Feito com Bootstrap 5</small>
+  </footer>
+
+  <!-- MODAL DE DETALHES -->
+  <div class="modal fade" id="modalJogo" tabindex="-1" aria-labelledby="modalTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-capa" id="modalCapa"></div>
+        <div class="modal-header border-0 pb-0">
+          <h2 class="modal-title h4" id="modalTitulo"></h2>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <div class="d-flex flex-wrap gap-2 mb-3" id="modalTags"></div>
+          <p id="modalDescricao"></p>
+          <p class="mb-0 text-muted-arcanum" id="modalInfo"></p>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-outline-arcanum" id="modalFavorito"></button>
+          <button type="button" class="btn btn-arcanum" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
