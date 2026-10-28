@@ -1,4 +1,3 @@
-/* ===== Identidade visual: roxo (principal), preto (secundária), vermelho (toques) ===== */
 :root {
   --roxo-900: #1a0b2e;
   --roxo-700: #3d1a78;
@@ -11,19 +10,19 @@
   --texto-suave: #a69fb8;
   --borda: #2a2433;
 }
-
+ 
 html { scroll-behavior: smooth; scroll-padding-top: 76px; }
-
+ 
 body {
   font-family: 'DM Sans', system-ui, sans-serif;
   background: var(--preto);
   color: var(--texto);
 }
-
+ 
 h1, h2, h3, h4, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; }
-
+ 
 .text-muted-arcanum { color: var(--texto-suave); }
-
+ 
 /* ===== Navegação ===== */
 .app-nav {
   background: rgba(7, 7, 9, .92);
@@ -34,7 +33,7 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; 
 .navbar-brand::after { content: "."; color: var(--vermelho); }
 .nav-link { color: var(--texto) !important; }
 .nav-link:hover, .nav-link:focus-visible { color: var(--roxo-300) !important; }
-
+ 
 .btn-fav-nav {
   border: 1px solid var(--vermelho);
   color: var(--texto);
@@ -42,7 +41,7 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; 
 }
 .btn-fav-nav:hover, .btn-fav-nav[aria-pressed="true"] { background: var(--vermelho); color: #fff; }
 .btn-fav-nav .badge { background: #fff; color: var(--vermelho); }
-
+ 
 /* ===== Hero ===== */
 .hero {
   padding: 140px 0 80px;
@@ -52,7 +51,7 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; 
 }
 .hero-title { font-weight: 800; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.1; margin-bottom: 1rem; }
 .hero-text { color: var(--texto-suave); font-size: 1.15rem; max-width: 52ch; margin-bottom: 1.8rem; }
-
+ 
 .hero-stats {
   display: grid; grid-template-columns: repeat(3, 1fr);
   background: var(--grafite);
@@ -64,26 +63,26 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; 
 }
 .hero-stats strong { display: block; font-family: 'Bricolage Grotesque', sans-serif; font-size: 2.2rem; color: var(--roxo-300); }
 .hero-stats span { color: var(--texto-suave); font-size: .9rem; }
-
+ 
 /* ===== Botões ===== */
 .btn-arcanum {
   background: var(--roxo-500); border: 1px solid var(--roxo-500);
   color: #fff; font-weight: 700; border-radius: 8px;
 }
 .btn-arcanum:hover, .btn-arcanum:focus-visible { background: var(--roxo-700); border-color: var(--roxo-300); color: #fff; }
-
+ 
 .btn-outline-arcanum {
   border: 1px solid var(--roxo-300); color: var(--roxo-300); border-radius: 8px;
 }
 .btn-outline-arcanum:hover { background: var(--roxo-300); color: var(--preto); }
-
+ 
 /* ===== Seções ===== */
 .section-title { font-weight: 800; font-size: clamp(1.6rem, 3vw, 2.2rem); }
 .section-title::before {
   content: ""; display: inline-block; width: 10px; height: 1.1em;
   background: var(--vermelho); margin-right: .5rem; vertical-align: -.15em; border-radius: 2px;
 }
-
+ 
 .filtros-busca { min-width: min(100%, 380px); }
 .form-control, .form-select {
   background-color: var(--grafite); color: var(--texto);
@@ -94,7 +93,7 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; 
   border-color: var(--roxo-500); box-shadow: 0 0 0 .2rem rgba(123, 47, 224, .35);
 }
 .form-control::placeholder { color: var(--texto-suave); }
-
+ 
 /* ===== Filtros de categoria ===== */
 .chip {
   background: transparent; color: var(--texto);
@@ -104,7 +103,7 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; 
 }
 .chip:hover { border-color: var(--roxo-300); }
 .chip.ativo { background: var(--roxo-500); border-color: var(--roxo-500); color: #fff; }
-
+ 
 /* ===== Cards ===== */
 .game-card {
   background: var(--grafite);
@@ -113,10 +112,10 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; 
   overflow: hidden;
   height: 100%;
   display: flex; flex-direction: column;
-  transition: transform .25s, border-color .25s, box-shadow .25s;
+  transition: border-color .25s;
 }
-.game-card:hover { transform: translateY(-6px); border-color: var(--roxo-500); box-shadow: 0 10px 30px rgba(123, 47, 224, .3); }
-
+.game-card:hover { border-color: var(--roxo-500); }
+ 
 .game-capa {
   height: 150px; position: relative;
   display: flex; align-items: flex-end; padding: .9rem;
@@ -137,7 +136,7 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; 
 }
 .btn-coracao:hover { transform: scale(1.12); }
 .btn-coracao.ativo { background: var(--vermelho); border-color: var(--vermelho); }
-
+ 
 .game-body { padding: 1rem; display: flex; flex-direction: column; flex: 1; }
 .game-titulo { font-size: 1.15rem; font-weight: 700; margin-bottom: .4rem; }
 .game-desc {
@@ -145,29 +144,71 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; 
   display: -webkit-box; line-clamp: 3; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
 }
 .game-body .btn { margin-top: auto; }
-
+ 
 .tag {
   display: inline-block; padding: .15rem .6rem; border-radius: 999px;
   background: var(--roxo-900); color: var(--roxo-300);
   border: 1px solid var(--roxo-700); font-size: .8rem;
 }
 .tag-vermelha { background: rgba(225, 29, 72, .12); color: #ff7a93; border-color: var(--vermelho); }
-
+ 
 .estado-vazio {
   text-align: center; padding: 3rem 1rem; margin-top: 1rem;
   border: 1px dashed var(--vermelho); border-radius: 12px; color: var(--texto-suave);
 }
-
+ 
 /* ===== Sobre / Rodapé ===== */
 .sobre { background: var(--grafite); border-top: 1px solid var(--borda); border-bottom: 1px solid var(--borda); }
 footer { color: var(--texto-suave); }
-
+ 
 /* ===== Modal ===== */
 .modal-content { background: var(--grafite); color: var(--texto); border: 1px solid var(--roxo-500); border-radius: 14px; overflow: hidden; }
 .modal-capa { height: 120px; }
-
+ 
 /* ===== Acessibilidade ===== */
 :focus-visible { outline: 3px solid var(--roxo-300); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
 }
+ 
+/* ===== Card interativo (flip) ===== */
+.flip-card {
+  height: 400px; perspective: 1100px; cursor: pointer; border-radius: 14px;
+  transition: transform .25s, box-shadow .25s;
+}
+.flip-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(123, 47, 224, .35); }
+.flip-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform .6s; transform-style: preserve-3d;
+}
+.flip-card.virado .flip-inner { transform: rotateY(180deg); }
+ 
+.flip-face {
+  position: absolute; inset: 0;
+  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  transition: visibility 0s .3s, border-color .25s;
+}
+.flip-front .game-capa { height: 210px; }
+.flip-back {
+  transform: rotateY(180deg); visibility: hidden;
+  padding: 1.2rem; display: flex; flex-direction: column;
+  background: linear-gradient(160deg, var(--c1, var(--roxo-900)) -40%, var(--grafite) 55%);
+  border-top: 4px solid var(--vermelho);
+}
+.flip-card.virado .flip-back { visibility: visible; }
+.flip-card.virado .flip-front { visibility: hidden; }
+ 
+.dica-virar { color: var(--texto-suave); font-size: .85rem; }
+.estrelas { color: var(--vermelho); letter-spacing: 2px; margin-bottom: .6rem; }
+.verso-desc { font-size: .92rem; flex: 1; overflow: auto; }
+.verso-info { font-size: .85rem; color: var(--texto-suave); }
+.btn-outline-arcanum.ativo-fav { background: var(--vermelho); border-color: var(--vermelho); color: #fff; }
+ 
+/* ===== Página só do catálogo ===== */
+.pagina-catalogo { padding-top: 100px; }
+.cabecalho-catalogo {
+  padding: 2rem 0 1.5rem; margin-bottom: 1rem;
+  background: radial-gradient(circle at 90% 0%, rgba(123, 47, 224, .35), transparent 50%);
+  border-bottom: 1px solid var(--borda);
+}
+ 
