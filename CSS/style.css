@@ -81,6 +81,7 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; 
 .section-title::before {
   content: ""; display: inline-block; width: 10px; height: 1.1em;
   background: var(--vermelho); margin-right: .5rem; vertical-align: -.15em; border-radius: 2px;
+  text-align: center; line-height: 1; font-size: 1.2rem;
 }
  
 .filtros-busca { min-width: min(100%, 380px); }

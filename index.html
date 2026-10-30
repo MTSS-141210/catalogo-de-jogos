@@ -11,8 +11,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="CSS/style.css">
 </head>
-<body>
+<body data-pagina="favoritos">
 
+  <!-- NAVEGAÇÃO -->
   <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top app-nav" aria-label="Navegação principal">
       <div class="container">
@@ -27,9 +28,9 @@
             <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
             <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
             <li class="nav-item">
-              <button type="button" class="btn btn-sm btn-fav-nav" id="btnVerFavoritos" aria-pressed="false">
+              <a class="btn btn-sm btn-fav-nav" href="#favoritos">
                 ♥ Favoritos <span class="badge" id="contadorFavoritos">0</span>
-              </button>
+              </a>
             </li>
           </ul>
         </div>
@@ -38,13 +39,15 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section id="inicio" class="hero">
       <div class="container">
         <div class="row align-items-center g-4">
           <div class="col-lg-7">
             <h1 class="hero-title">Encontre o próximo jogo que vai te prender por horas.</h1>
-            <p class="hero-text">Explore a coleção por categoria, leia a descrição de cada título e salve seus favoritos para jogar depois.</p>
-            <a href="catalogo.html" class="btn btn-arcanum btn-lg">Ver catálogo</a>
+            <p class="hero-text">Explore o catálogo completo, favorite os títulos que mais chamarem sua atenção e acompanhe todos eles aqui.</p>
+            <a href="catalogo.html" class="btn btn-arcanum btn-lg me-2">Ver catálogo</a>
+            <a href="#favoritos" class="btn btn-outline-arcanum btn-lg">Meus favoritos</a>
           </div>
           <div class="col-lg-5">
             <div class="hero-stats" aria-label="Resumo do catálogo">
@@ -57,54 +60,39 @@
       </div>
     </section>
 
-    <section id="catalogo" class="py-5">
+    <!-- FAVORITOS -->
+    <section id="favoritos" class="py-5">
       <div class="container">
-        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4">
-          <div>
-            <h2 class="section-title mb-1">Catálogo</h2>
-            <p class="text-muted-arcanum mb-0" id="resultadoInfo" aria-live="polite"></p>
-          </div>
-          <div class="row g-2 filtros-busca">
-            <div class="col-7">
-              <label for="busca" class="visually-hidden">Buscar jogo</label>
-              <input type="search" id="busca" class="form-control" placeholder="Buscar por nome...">
-            </div>
-            <div class="col-5">
-              <label for="ordenar" class="visually-hidden">Ordenar por</label>
-              <select id="ordenar" class="form-select">
-                <option value="nome">Nome (A-Z)</option>
-                <option value="nota">Maior nota</option>
-                <option value="ano">Mais recentes</option>
-              </select>
-            </div>
-          </div>
+        <div class="mb-4">
+          <h2 class="section-title mb-1">Meus favoritos</h2>
+          <p class="text-muted-arcanum mb-0" id="resultadoInfo" aria-live="polite"></p>
         </div>
-
-        <div class="d-flex flex-wrap gap-2 mb-4" id="filtrosCategoria" role="group" aria-label="Filtrar por categoria"></div>
 
         <div class="row g-4" id="listaJogos"></div>
 
         <div class="estado-vazio d-none" id="estadoVazio">
-          <p class="mb-1 fw-bold">Nenhum jogo encontrado.</p>
-          <p class="mb-0">Tente outro nome ou volte para a categoria “Todos”.</p>
+          <p class="mb-1 fw-bold">Você ainda não favoritou nenhum jogo.</p>
+          <p class="mb-3">Escolha seus preferidos no catálogo e eles aparecem aqui.</p>
+          <a href="catalogo.html" class="btn btn-arcanum">Ir para o catálogo</a>
         </div>
       </div>
     </section>
 
+    <!-- SOBRE -->
     <section id="sobre" class="py-5 sobre">
       <div class="container">
         <div class="row g-4">
           <div class="col-md-6">
             <h2 class="section-title">Sobre o projeto</h2>
-            <p>Arcanum é um catálogo de jogos feito para estudo de HTML, CSS, Bootstrap e JavaScript. Os dados ficam em uma lista no código e a página é montada dinamicamente.</p>
+            <p>Arcanum é um catálogo de jogos feito para que voçê possa explorar e organizar seus jogos favoritos de forma simples e intuitiva.</p>
           </div>
           <div class="col-md-6">
             <h3 class="h5">Como usar</h3>
             <ul class="mb-0">
-              <li>Clique em uma categoria para filtrar.</li>
-              <li>Use a busca e a ordenação para refinar a lista.</li>
-              <li>Toque no coração para favoritar.</li>
-              <li>Clique em “Detalhes” para ler a descrição completa.</li>
+              <li>Abra o catálogo para filtrar por categoria e buscar jogos.</li>
+              <li>Clique no coração de um card para favoritar.</li>
+              <li>Os favoritos aparecem nesta página inicial.</li>
+              <li>Clique em um card para virá-lo e em “Detalhes” para ler mais.</li>
             </ul>
           </div>
         </div>
@@ -113,9 +101,10 @@
   </main>
 
   <footer class="py-4 text-center">
-    <small>© 2026 Arcanum · Projeto acadêmico · Feito com Bootstrap 5</small>
+    <small>© 2026 Arcanum · Projeto acadêmico · Feito por Matheus Suzigan</small>
   </footer>
 
+  <!-- MODAL DE DETALHES -->
   <div class="modal fade" id="modalJogo" tabindex="-1" aria-labelledby="modalTitulo" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
@@ -138,6 +127,6 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="JS/catalogo.js"></script>
+  <script src="JS/index.js"></script>
 </body>
 </html>
