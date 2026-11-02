@@ -1,8 +1,3 @@
-/* =========================================================
-   Arcanum - Catálogo de Jogos
-   Organização: 1) dados  2) estado  3) funções  4) eventos
-   ========================================================= */
- 
 // 1) DADOS ---------------------------------------------------
 const jogos = [
   { id: 1,  titulo: "Hollow Knight",         categoria: "Aventura", ano: 2017, plataforma: "PC, Switch, PS4", nota: 9.4, cores: ["#1f2a60", "#7b2fe0"],
