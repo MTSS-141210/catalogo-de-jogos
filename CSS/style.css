@@ -23,7 +23,6 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; 
  
 .text-muted-arcanum { color: var(--texto-suave); }
  
-/* ===== Navegação ===== */
 .app-nav {
   background: rgba(7, 7, 9, .92);
   backdrop-filter: blur(8px);
@@ -42,7 +41,6 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; 
 .btn-fav-nav:hover, .btn-fav-nav[aria-pressed="true"] { background: var(--vermelho); color: #fff; }
 .btn-fav-nav .badge { background: #fff; color: var(--vermelho); }
  
-/* ===== Hero ===== */
 .hero {
   padding: 140px 0 80px;
   background:
@@ -63,8 +61,7 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; 
 }
 .hero-stats strong { display: block; font-family: 'Bricolage Grotesque', sans-serif; font-size: 2.2rem; color: var(--roxo-300); }
 .hero-stats span { color: var(--texto-suave); font-size: .9rem; }
- 
-/* ===== Botões ===== */
+
 .btn-arcanum {
   background: var(--roxo-500); border: 1px solid var(--roxo-500);
   color: #fff; font-weight: 700; border-radius: 8px;
@@ -76,7 +73,6 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; 
 }
 .btn-outline-arcanum:hover { background: var(--roxo-300); color: var(--preto); }
  
-/* ===== Seções ===== */
 .section-title { font-weight: 800; font-size: clamp(1.6rem, 3vw, 2.2rem); }
 .section-title::before {
   content: ""; display: inline-block; width: 10px; height: 1.1em;
@@ -95,7 +91,6 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; 
 }
 .form-control::placeholder { color: var(--texto-suave); }
  
-/* ===== Filtros de categoria ===== */
 .chip {
   background: transparent; color: var(--texto);
   border: 1px solid var(--borda); border-radius: 999px;
@@ -105,7 +100,6 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; 
 .chip:hover { border-color: var(--roxo-300); }
 .chip.ativo { background: var(--roxo-500); border-color: var(--roxo-500); color: #fff; }
  
-/* ===== Cards ===== */
 .game-card {
   background: var(--grafite);
   border: 1px solid var(--borda);
@@ -158,21 +152,17 @@ h1, h2, h3, h4, .navbar-brand { font-family: 'Bricolage Grotesque', sans-serif; 
   border: 1px dashed var(--vermelho); border-radius: 12px; color: var(--texto-suave);
 }
  
-/* ===== Sobre / Rodapé ===== */
 .sobre { background: var(--grafite); border-top: 1px solid var(--borda); border-bottom: 1px solid var(--borda); }
 footer { color: var(--texto-suave); }
  
-/* ===== Modal ===== */
 .modal-content { background: var(--grafite); color: var(--texto); border: 1px solid var(--roxo-500); border-radius: 14px; overflow: hidden; }
 .modal-capa { height: 120px; }
  
-/* ===== Acessibilidade ===== */
 :focus-visible { outline: 3px solid var(--roxo-300); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
 }
- 
-/* ===== Card interativo (flip) ===== */
+
 .flip-card {
   height: 400px; perspective: 1100px; cursor: pointer; border-radius: 14px;
   transition: transform .25s, box-shadow .25s;
@@ -180,36 +170,39 @@ footer { color: var(--texto-suave); }
 .flip-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(123, 47, 224, .35); }
 .flip-inner {
   position: relative; width: 100%; height: 100%;
-  transition: transform .6s; transform-style: preserve-3d;
+  transition: transform .75s cubic-bezier(.2, .8, .2, 1);
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 .flip-card.virado .flip-inner { transform: rotateY(180deg); }
- 
+
 .flip-face {
   position: absolute; inset: 0;
   backface-visibility: hidden; -webkit-backface-visibility: hidden;
-  transition: visibility 0s .3s, border-color .25s;
+  transition: opacity .2s ease, transform .2s ease;
+}
+.flip-front {
+  opacity: 1;
 }
 .flip-front .game-capa { height: 210px; }
 .flip-back {
-  transform: rotateY(180deg); visibility: hidden;
+  transform: rotateY(180deg); opacity: 0;
   padding: 1.2rem; display: flex; flex-direction: column;
   background: linear-gradient(160deg, var(--c1, var(--roxo-900)) -40%, var(--grafite) 55%);
   border-top: 4px solid var(--vermelho);
 }
-.flip-card.virado .flip-back { visibility: visible; }
-.flip-card.virado .flip-front { visibility: hidden; }
- 
+.flip-card.virado .flip-front { opacity: 0; }
+.flip-card.virado .flip-back { opacity: 1; }
+
 .dica-virar { color: var(--texto-suave); font-size: .85rem; }
 .estrelas { color: var(--vermelho); letter-spacing: 2px; margin-bottom: .6rem; }
 .verso-desc { font-size: .92rem; flex: 1; overflow: auto; }
 .verso-info { font-size: .85rem; color: var(--texto-suave); }
 .btn-outline-arcanum.ativo-fav { background: var(--vermelho); border-color: var(--vermelho); color: #fff; }
  
-/* ===== Página só do catálogo ===== */
 .pagina-catalogo { padding-top: 100px; }
 .cabecalho-catalogo {
   padding: 2rem 0 1.5rem; margin-bottom: 1rem;
   background: radial-gradient(circle at 90% 0%, rgba(123, 47, 224, .35), transparent 50%);
   border-bottom: 1px solid var(--borda);
 }
- 

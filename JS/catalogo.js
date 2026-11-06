@@ -1,9 +1,4 @@
-/* =========================================================
-   Arcanum - Catálogo de Jogos
-   Organização: 1) dados  2) estado  3) funções  4) eventos
-   ========================================================= */
- 
-// 1) DADOS ---------------------------------------------------
+//  DADOS ---------------------------------------------------
 const jogos = [
   { id: 1,  titulo: "Hollow Knight",         categoria: "Aventura", ano: 2017, plataforma: "PC, Switch, PS4", nota: 9.4, cores: ["#1f2a60", "#7b2fe0"],
     descricao: "Explore o reino subterrâneo de Hallownest em um metroidvania desenhado à mão, com combates desafiadores, chefes memoráveis e uma atmosfera melancólica." },
@@ -407,7 +402,7 @@ const jogos = [
     descricao: "Uma experiência esportiva com foco em habilidade, estratégia e competição. Participe de partidas e torneios em FIFA 23." }
 ];
  
-// 2) ESTADO --------------------------------------------------
+//  ESTADO --------------------------------------------------
 function lerFavoritos() {
   try {
     const valor = localStorage.getItem("arcanum:favoritos");
@@ -426,7 +421,7 @@ const estado = {
   jogoAberto: null
 };
  
-// 3) REFERÊNCIAS AO DOM -------------------------------------
+//  REFERÊNCIAS AO DOM -------------------------------------
 const $lista = document.getElementById("listaJogos");
 const $filtros = document.getElementById("filtrosCategoria");
 const $busca = document.getElementById("busca");
@@ -445,7 +440,7 @@ function abrirModal() {
   bootstrap.Modal.getOrCreateInstance($modalEl).show();
 }
  
-// 4) FUNÇÕES -------------------------------------------------
+//  FUNÇÕES -------------------------------------------------
 const gradiente = (cores) => `linear-gradient(135deg, ${cores[0]}, ${cores[1]})`;
 
 function notificarFavoritos() {
@@ -608,7 +603,7 @@ function abrirDetalhes(id) {
   abrirModal();
 }
 
-// 5) EVENTOS -------------------------------------------------
+//  EVENTOS -------------------------------------------------
 $filtros?.addEventListener("click", (e) => {
   const chip = e.target.closest(".chip");
   if (!chip) return;
@@ -663,7 +658,7 @@ window.addEventListener("storage", (e) => {
   renderizarCatalogo();
 });
 
-// 6) INICIALIZAÇÃO ------------------------------------------
+//  INICIALIZAÇÃO ------------------------------------------
 function inicializarCatalogo() {
   renderizarEstatisticas();
   renderizarFiltros();

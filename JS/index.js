@@ -1,30 +1,30 @@
-// 1) DADOS ---------------------------------------------------
+// DADOS ---------------------------------------------------
 const jogos = [
-  { id: 1,  titulo: "Hollow Knight",         categoria: "Aventura", ano: 2017, plataforma: "PC, Switch, PS4", nota: 9.4, cores: ["#1f2a60", "#7b2fe0"],
+  { id: 1,  titulo: "Hollow Knight", categoria: "Aventura", ano: 2017, plataforma: "PC, Switch, PS4", nota: 9.4, cores: ["#1f2a60", "#7b2fe0"],
     descricao: "Explore o reino subterrâneo de Hallownest em um metroidvania desenhado à mão, com combates desafiadores, chefes memoráveis e uma atmosfera melancólica." },
-  { id: 2,  titulo: "The Witcher 3",         categoria: "RPG",      ano: 2015, plataforma: "PC, PS4, Xbox One", nota: 9.7, cores: ["#3d1a78", "#e11d48"],
+  { id: 2,  titulo: "The Witcher 3", categoria: "RPG", ano: 2015, plataforma: "PC, PS4, Xbox One", nota: 9.7, cores: ["#3d1a78", "#e11d48"],
     descricao: "Interprete o caçador de monstros Geralt em um mundo aberto enorme, repleto de missões com escolhas que mudam o rumo da história." },
-  { id: 3,  titulo: "Celeste",               categoria: "Plataforma", ano: 2018, plataforma: "PC, Switch, PS4", nota: 9.2, cores: ["#7b2fe0", "#b388ff"],
+  { id: 3,  titulo: "Celeste", categoria: "Plataforma", ano: 2018, plataforma: "PC, Switch, PS4", nota: 9.2, cores: ["#7b2fe0", "#b388ff"],
     descricao: "Ajude Madeline a escalar a montanha Celeste em fases precisas e difíceis, acompanhadas por uma história sensível sobre ansiedade e superação." },
-  { id: 4,  titulo: "DOOM Eternal",          categoria: "Ação",     ano: 2020, plataforma: "PC, PS4, Xbox One", nota: 8.8, cores: ["#7a0b1f", "#e11d48"],
+  { id: 4,  titulo: "DOOM Eternal", categoria: "Ação", ano: 2020, plataforma: "PC, PS4, Xbox One", nota: 8.8, cores: ["#7a0b1f", "#e11d48"],
     descricao: "Tiroteio frenético em primeira pessoa onde você precisa alternar armas e habilidades o tempo todo para sobreviver contra hordas de demônios." },
-  { id: 5,  titulo: "Stardew Valley",        categoria: "Simulação", ano: 2016, plataforma: "PC, Switch, Mobile", nota: 9.0, cores: ["#2f6b3a", "#7b2fe0"],
+  { id: 5,  titulo: "Stardew Valley", categoria: "Simulação", ano: 2016, plataforma: "PC, Switch, Mobile", nota: 9.0, cores: ["#2f6b3a", "#7b2fe0"],
     descricao: "Herde uma fazenda, plante, crie animais, pesque, minere e conquiste a amizade dos moradores da vila neste simulador relaxante." },
-  { id: 6,  titulo: "Hades",                 categoria: "Ação",     ano: 2020, plataforma: "PC, Switch, PS5", nota: 9.3, cores: ["#5a0f2b", "#e11d48"],
+  { id: 6,  titulo: "Hades", categoria: "Ação", ano: 2020, plataforma: "PC, Switch, PS5", nota: 9.3, cores: ["#5a0f2b", "#e11d48"],
     descricao: "Fuja do submundo grego como Zagreu em um roguelike rápido, com combate fluido, narrativa que avança a cada tentativa e ótima trilha sonora." },
-  { id: 7,  titulo: "Civilization VI",       categoria: "Estratégia", ano: 2016, plataforma: "PC, Switch", nota: 8.6, cores: ["#1d3b5c", "#7b2fe0"],
+  { id: 7,  titulo: "Civilization VI", categoria: "Estratégia", ano: 2016, plataforma: "PC, Switch", nota: 8.6, cores: ["#1d3b5c", "#7b2fe0"],
     descricao: "Construa um império do zero até a era moderna, gerenciando cidades, pesquisa, diplomacia e guerra em partidas por turnos." },
-  { id: 8,  titulo: "Elden Ring",            categoria: "RPG",      ano: 2022, plataforma: "PC, PS5, Xbox Series", nota: 9.5, cores: ["#4a3a10", "#7b2fe0"],
+  { id: 8,  titulo: "Elden Ring", categoria: "RPG", ano: 2022, plataforma: "PC, PS5, Xbox Series", nota: 9.5, cores: ["#4a3a10", "#7b2fe0"],
     descricao: "Mundo aberto sombrio criado pela FromSoftware, com liberdade de exploração, builds variadas e chefes que exigem paciência e estratégia." },
-  { id: 9,  titulo: "Portal 2",              categoria: "Puzzle",   ano: 2011, plataforma: "PC, PS3, Xbox 360", nota: 9.5, cores: ["#0f4c75", "#b388ff"],
+  { id: 9,  titulo: "Portal 2", categoria: "Puzzle", ano: 2011, plataforma: "PC, PS3, Xbox 360", nota: 9.5, cores: ["#0f4c75", "#b388ff"],
     descricao: "Resolva quebra-cabeças com portais e física em laboratórios cheios de humor, ótimos diálogos e um modo cooperativo muito elogiado." },
-  { id: 10, titulo: "Forza Horizon 5",       categoria: "Corrida",  ano: 2021, plataforma: "PC, Xbox", nota: 9.0, cores: ["#b45309", "#7b2fe0"],
+  { id: 10, titulo: "Forza Horizon 5", categoria: "Corrida", ano: 2021, plataforma: "PC, Xbox", nota: 9.0, cores: ["#b45309", "#7b2fe0"],
     descricao: "Corra livremente por um México virtual com centenas de carros, eventos sazonais e gráficos impressionantes." },
-  { id: 11, titulo: "Minecraft",             categoria: "Simulação", ano: 2011, plataforma: "Todas", nota: 9.1, cores: ["#256d3a", "#3d1a78"],
+  { id: 11, titulo: "Minecraft", categoria: "Simulação", ano: 2011, plataforma: "Todas", nota: 9.1, cores: ["#256d3a", "#3d1a78"],
     descricao: "Mundo de blocos onde você coleta recursos, constrói qualquer coisa que imaginar e sobrevive à noite, sozinho ou com amigos." },
-  { id: 12, titulo: "Hades II: Ecos",        categoria: "Aventura", ano: 2024, plataforma: "PC", nota: 8.9, cores: ["#2b0b4d", "#e11d48"],
+  { id: 12, titulo: "Hades II: Ecos", categoria: "Aventura", ano: 2024, plataforma: "PC", nota: 8.9, cores: ["#2b0b4d", "#e11d48"],
     descricao: "Título fictício usado como exemplo: uma aventura de exploração com feitiços, chefes e escolhas que alteram o caminho da jornada." },
-  { id: 13, titulo: "Resident Evil 4",       categoria: "Terror",   ano: 2023, plataforma: "PC, PS5, Xbox Series", nota: 9.0, cores: ["#2a0a12", "#e11d48"],
+  { id: 13, titulo: "Resident Evil 4", categoria: "Terror", ano: 2023, plataforma: "PC, PS5, Xbox Series", nota: 9.0, cores: ["#2a0a12", "#e11d48"],
     descricao: "Refilmagem do clássico de sobrevivência em que o agente Leon S. Kennedy precisa resgatar a filha do presidente em uma vila isolada, com combate tenso, recursos escassos e muita ação." },
   { id: 14, titulo: "The Legend of Zelda: Breath of the Wild", categoria: "Aventura", ano: 2017, plataforma: "Switch, Wii U", nota: 9.7, cores: ["#1d4f5c", "#7b2fe0"],
     descricao: "Explore Hyrule com total liberdade, escalando qualquer superfície e resolvendo santuários e desafios com a física e os elementos do mundo." },
@@ -402,7 +402,7 @@ const jogos = [
     descricao: "Uma experiência esportiva com foco em habilidade, estratégia e competição. Participe de partidas e torneios em FIFA 23." }
 ];
  
-// 2) ESTADO --------------------------------------------------
+// ESTADO --------------------------------------------------
 function lerFavoritos() {
   try {
     const valor = localStorage.getItem("arcanum:favoritos");
@@ -421,7 +421,7 @@ const estado = {
   jogoAberto: null
 };
  
-// 3) REFERÊNCIAS AO DOM -------------------------------------
+//  REFERÊNCIAS AO DOM -------------------------------------
 const $lista = document.getElementById("listaJogos");
 const $filtros = document.getElementById("filtrosCategoria");
 const $busca = document.getElementById("busca");
@@ -440,7 +440,7 @@ function abrirModal() {
   bootstrap.Modal.getOrCreateInstance($modalEl).show();
 }
  
-// 4) FUNÇÕES -------------------------------------------------
+// FUNÇÕES -------------------------------------------------
 const gradiente = (cores) => `linear-gradient(135deg, ${cores[0]}, ${cores[1]})`;
 
 function notificarFavoritos() {
@@ -598,7 +598,7 @@ function abrirDetalhes(id) {
   abrirModal();
 }
  
-// 5) EVENTOS -------------------------------------------------
+// 5EVENTOS -------------------------------------------------
 $filtros?.addEventListener("click", (e) => {
   const chip = e.target.closest(".chip");
   if (!chip) return;
@@ -652,7 +652,7 @@ window.addEventListener("storage", (e) => {
   renderizarCatalogo();
 });
 
-// 6) INICIALIZAÇÃO ------------------------------------------
+//  INICIALIZAÇÃO ------------------------------------------
 function inicializarCatalogo() {
   renderizarEstatisticas();
   renderizarFiltros();
