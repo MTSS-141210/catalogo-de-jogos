@@ -235,6 +235,176 @@ const jogos = [
     descricao: "Atravesse um território devastado entregando cargas para reconectar a humanidade, em uma experiência estranha e contemplativa." },
   { id: 115, titulo: "Control", categoria: "Ação", ano: 2019, plataforma: "PC, PS4, PS5, Xbox", nota: 8.8, cores: ["#7a0b1f", "#1f2a60"],
     descricao: "Jesse Faden explora um prédio governamental em constante mutação, usando poderes telecinéticos em combates cheios de destruição." },
+  { id: 116, titulo: "Sekiro: Shadows Die Twice", categoria: "Ação", ano: 2019, plataforma: "PC, PS4, Xbox One", nota: 9.2, cores: ["#1d3b5c", "#7a0b1f"],
+    descricao: "Um samurai busca vingança em um Japão feudal repleto de inimigos desafiadores, com combate preciso e mecânicas de postura." },
+  { id: 117, titulo: "A Plague Tale: Requiem", categoria: "Terror", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.2, cores: ["#7b2fe0", "#2f6b3a"],
+    descricao: "Uma experiência de suspense e tensão, com perigos, exploração e momentos de grande impacto. Descubra os segredos e tente sobreviver em A Plague Tale: Requiem." },
+  { id: 118, titulo: "Alan Wake", categoria: "Terror", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.3, cores: ["#e11d48", "#b45309"],
+    descricao: "Uma experiência de suspense e tensão, com perigos, exploração e momentos de grande impacto. Descubra os segredos e tente sobreviver em Alan Wake." },
+  { id: 119, titulo: "Alan Wake 2", categoria: "Terror", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.9, cores: ["#0f4c75", "#b388ff"],
+    descricao: "Uma experiência de suspense e tensão, com perigos, exploração e momentos de grande impacto. Descubra os segredos e tente sobreviver em Alan Wake 2." },
+  { id: 120, titulo: "American Arcadia", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: null, cores: ["#2f6b3a", "#5c3a1d"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de American Arcadia." },
+  { id: 121, titulo: "Animal Well", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 9.0, cores: ["#b45309", "#1d4f5c"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Animal Well." },
+  { id: 122, titulo: "Armored Core VI: Fires of Rubicon", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.6, cores: ["#b388ff", "#7a0b1f"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Armored Core VI: Fires of Rubicon." },
+  { id: 123, titulo: "Astral Chain", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.5, cores: ["#5c3a1d", "#1f2a60"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Astral Chain." },
+  { id: 124, titulo: "Axiom Verge", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.2, cores: ["#1d4f5c", "#7b2fe0"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Axiom Verge." },
+  { id: 125, titulo: "Axiom Verge 2", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.5, cores: ["#7a0b1f", "#e11d48"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Axiom Verge 2." },
+  { id: 126, titulo: "Bastion", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.6, cores: ["#1f2a60", "#0f4c75"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Bastion." },
+  { id: 127, titulo: "Bayonetta", categoria: "Ação", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.8, cores: ["#7b2fe0", "#2f6b3a"],
+    descricao: "Combates intensos, desafios variados e ritmo acelerado são o destaque. Domine as mecânicas, enfrente adversários e avance em Bayonetta." },
+  { id: 128, titulo: "Bayonetta 2", categoria: "Ação", ano: null, plataforma: "Variadas (verificar por versão)", nota: 9.1, cores: ["#e11d48", "#b45309"],
+    descricao: "Combates intensos, desafios variados e ritmo acelerado são o destaque. Domine as mecânicas, enfrente adversários e avance em Bayonetta 2." },
+  { id: 129, titulo: "Bayonetta 3", categoria: "Ação", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.2, cores: ["#0f4c75", "#b388ff"],
+    descricao: "Combates intensos, desafios variados e ritmo acelerado são o destaque. Domine as mecânicas, enfrente adversários e avance em Bayonetta 3." },
+  { id: 130, titulo: "Before Your Eyes", categoria: "Puzzle", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.8, cores: ["#2f6b3a", "#5c3a1d"],
+    descricao: "Quebra-cabeças e desafios de lógica exigem observação e criatividade. Experimente soluções diferentes e desvende os mistérios de Before Your Eyes." },
+  { id: 131, titulo: "Beneath a Steel Sky", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.5, cores: ["#b45309", "#1d4f5c"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Beneath a Steel Sky." },
+  { id: 132, titulo: "Beyond: Two Souls", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.1, cores: ["#b388ff", "#7a0b1f"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Beyond: Two Souls." },
+  { id: 133, titulo: "Black Mesa", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.6, cores: ["#5c3a1d", "#1f2a60"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Black Mesa." },
+  { id: 134, titulo: "Blasphemous", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.7, cores: ["#1d4f5c", "#7b2fe0"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Blasphemous." },
+  { id: 135, titulo: "Blasphemous 2", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.0, cores: ["#7a0b1f", "#e11d48"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Blasphemous 2." },
+  { id: 136, titulo: "Bomb Rush Cyberfunk", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.9, cores: ["#1f2a60", "#0f4c75"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Bomb Rush Cyberfunk." },
+  { id: 137, titulo: "Bravely Default", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.7, cores: ["#7b2fe0", "#2f6b3a"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Bravely Default." },
+  { id: 138, titulo: "Bravely Default II", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.6, cores: ["#e11d48", "#b45309"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Bravely Default II." },
+  { id: 139, titulo: "Breath of Fire III", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.6, cores: ["#0f4c75", "#b388ff"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Breath of Fire III." },
+  { id: 140, titulo: "Broken Age", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.0, cores: ["#2f6b3a", "#5c3a1d"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Broken Age." },
+  { id: 141, titulo: "Call of Duty 4: Modern Warfare", categoria: "Tiro", ano: null, plataforma: "Variadas (verificar por versão)", nota: 9.4, cores: ["#b45309", "#1d4f5c"],
+    descricao: "Uma experiência de combate com foco em precisão, posicionamento e gerenciamento de recursos. Encare missões e confrontos em Call of Duty 4: Modern Warfare." },
+  { id: 142, titulo: "Call of Duty: Black Ops", categoria: "Tiro", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.7, cores: ["#b388ff", "#7a0b1f"],
+    descricao: "Uma experiência de combate com foco em precisão, posicionamento e gerenciamento de recursos. Encare missões e confrontos em Call of Duty: Black Ops." },
+  { id: 143, titulo: "Call of Duty: Modern Warfare II", categoria: "Tiro", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.5, cores: ["#5c3a1d", "#1f2a60"],
+    descricao: "Uma experiência de combate com foco em precisão, posicionamento e gerenciamento de recursos. Encare missões e confrontos em Call of Duty: Modern Warfare II." },
+  { id: 144, titulo: "Call of Duty: World at War", categoria: "Tiro", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.4, cores: ["#1d4f5c", "#7b2fe0"],
+    descricao: "Uma experiência de combate com foco em precisão, posicionamento e gerenciamento de recursos. Encare missões e confrontos em Call of Duty: World at War." },
+  { id: 145, titulo: "Catherine", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.1, cores: ["#7a0b1f", "#e11d48"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Catherine." },
+  { id: 146, titulo: "Chained Echoes", categoria: "RPG", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.6, cores: ["#1f2a60", "#0f4c75"],
+    descricao: "Um RPG com evolução de personagens, habilidades e escolhas ao longo da jornada. Monte sua estratégia, conheça aliados e explore o universo de Chained Echoes." },
+  { id: 147, titulo: "Child of Light", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.2, cores: ["#7b2fe0", "#2f6b3a"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Child of Light." },
+  { id: 148, titulo: "Chicory: A Colorful Tale", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.2, cores: ["#e11d48", "#b45309"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Chicory: A Colorful Tale." },
+  { id: 149, titulo: "Citizen Sleeper", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.3, cores: ["#0f4c75", "#b388ff"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Citizen Sleeper." },
+  { id: 150, titulo: "Clair Obscur: Expedition 33", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 9.2, cores: ["#2f6b3a", "#5c3a1d"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Clair Obscur: Expedition 33." },
+  { id: 151, titulo: "Code Vein", categoria: "RPG", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.0, cores: ["#b45309", "#1d4f5c"],
+    descricao: "Um RPG com evolução de personagens, habilidades e escolhas ao longo da jornada. Monte sua estratégia, conheça aliados e explore o universo de Code Vein." },
+  { id: 152, titulo: "Command & Conquer: Red Alert 2", categoria: "Estratégia", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.6, cores: ["#b388ff", "#7a0b1f"],
+    descricao: "Planejamento e decisões fazem a diferença: administre recursos, pense alguns passos à frente e encontre a melhor tática em Command & Conquer: Red Alert 2." },
+  { id: 153, titulo: "Commandos 2", categoria: "Estratégia", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.3, cores: ["#5c3a1d", "#1f2a60"],
+    descricao: "Planejamento e decisões fazem a diferença: administre recursos, pense alguns passos à frente e encontre a melhor tática em Commandos 2." },
+  { id: 154, titulo: "Conker's Bad Fur Day", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.3, cores: ["#1d4f5c", "#7b2fe0"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Conker's Bad Fur Day." },
+  { id: 155, titulo: "Crash Bandicoot N. Sane Trilogy", categoria: "Plataforma", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.9, cores: ["#7a0b1f", "#e11d48"],
+    descricao: "Atravesse fases criativas com saltos, obstáculos e desafios de habilidade. Explore caminhos alternativos e descubra segredos em Crash Bandicoot N. Sane Trilogy." },
+  { id: 156, titulo: "Crash Bandicoot 4: It's About Time", categoria: "Plataforma", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.5, cores: ["#1f2a60", "#0f4c75"],
+    descricao: "Atravesse fases criativas com saltos, obstáculos e desafios de habilidade. Explore caminhos alternativos e descubra segredos em Crash Bandicoot 4: It's About Time." },
+  { id: 157, titulo: "Cult of the Lamb", categoria: "Simulação", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.0, cores: ["#7b2fe0", "#2f6b3a"],
+    descricao: "Uma experiência de simulação em que você administra atividades, experimenta possibilidades e desenvolve seu próprio ritmo em Cult of the Lamb." },
+  { id: 158, titulo: "Danganronpa: Trigger Happy Havoc", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.0, cores: ["#e11d48", "#b45309"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Danganronpa: Trigger Happy Havoc." },
+  { id: 159, titulo: "Danganronpa 2: Goodbye Despair", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.2, cores: ["#0f4c75", "#b388ff"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Danganronpa 2: Goodbye Despair." },
+  { id: 160, titulo: "Darkest Dungeon", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.4, cores: ["#2f6b3a", "#5c3a1d"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Darkest Dungeon." },
+  { id: 161, titulo: "Darkest Dungeon II", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.9, cores: ["#b45309", "#1d4f5c"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Darkest Dungeon II." },
+  { id: 162, titulo: "Darksiders", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.2, cores: ["#b388ff", "#7a0b1f"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Darksiders." },
+  { id: 163, titulo: "Darksiders II", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.0, cores: ["#5c3a1d", "#1f2a60"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Darksiders II." },
+  { id: 164, titulo: "Darksiders III", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 6.4, cores: ["#1d4f5c", "#7b2fe0"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Darksiders III." },
+  { id: 165, titulo: "Darksiders Genesis", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.5, cores: ["#7a0b1f", "#e11d48"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Darksiders Genesis." },
+  { id: 166, titulo: "DAVE THE DIVER", categoria: "Simulação", ano: null, plataforma: "Variadas (verificar por versão)", nota: 9.0, cores: ["#1f2a60", "#0f4c75"],
+    descricao: "Uma experiência de simulação em que você administra atividades, experimenta possibilidades e desenvolve seu próprio ritmo em DAVE THE DIVER." },
+  { id: 167, titulo: "DayZ", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: null, cores: ["#7b2fe0", "#2f6b3a"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de DayZ." },
+  { id: 168, titulo: "Demon's Souls", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 9.2, cores: ["#e11d48", "#b45309"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Demon's Souls." },
+  { id: 169, titulo: "Desperados III", categoria: "Estratégia", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.5, cores: ["#0f4c75", "#b388ff"],
+    descricao: "Planejamento e decisões fazem a diferença: administre recursos, pense alguns passos à frente e encontre a melhor tática em Desperados III." },
+  { id: 170, titulo: "Detroit: Become Human", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.0, cores: ["#2f6b3a", "#5c3a1d"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Detroit: Become Human." },
+  { id: 171, titulo: "Diablo II: Resurrected", categoria: "RPG", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.0, cores: ["#b45309", "#1d4f5c"],
+    descricao: "Um RPG com evolução de personagens, habilidades e escolhas ao longo da jornada. Monte sua estratégia, conheça aliados e explore o universo de Diablo II: Resurrected." },
+  { id: 172, titulo: "Diablo III", categoria: "RPG", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.8, cores: ["#b388ff", "#7a0b1f"],
+    descricao: "Um RPG com evolução de personagens, habilidades e escolhas ao longo da jornada. Monte sua estratégia, conheça aliados e explore o universo de Diablo III." },
+  { id: 173, titulo: "Diablo IV", categoria: "RPG", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.6, cores: ["#5c3a1d", "#1f2a60"],
+    descricao: "Um RPG com evolução de personagens, habilidades e escolhas ao longo da jornada. Monte sua estratégia, conheça aliados e explore o universo de Diablo IV." },
+  { id: 174, titulo: "Diddy Kong Racing", categoria: "Corrida", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.8, cores: ["#1d4f5c", "#7b2fe0"],
+    descricao: "Dispute provas em pistas e ambientes variados, buscando melhorar seu desempenho e dominar cada curva em Diddy Kong Racing." },
+  { id: 175, titulo: "Doki Doki Literature Club!", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: null, cores: ["#7a0b1f", "#e11d48"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Doki Doki Literature Club!." },
+  { id: 176, titulo: "Donkey Kong Country Returns", categoria: "Plataforma", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.7, cores: ["#1f2a60", "#0f4c75"],
+    descricao: "Atravesse fases criativas com saltos, obstáculos e desafios de habilidade. Explore caminhos alternativos e descubra segredos em Donkey Kong Country Returns." },
+  { id: 177, titulo: "Donkey Kong Country: Tropical Freeze", categoria: "Plataforma", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.5, cores: ["#7b2fe0", "#2f6b3a"],
+    descricao: "Atravesse fases criativas com saltos, obstáculos e desafios de habilidade. Explore caminhos alternativos e descubra segredos em Donkey Kong Country: Tropical Freeze." },
+  { id: 178, titulo: "Dragon Age: Origins", categoria: "RPG", ano: null, plataforma: "Variadas (verificar por versão)", nota: 9.1, cores: ["#e11d48", "#b45309"],
+    descricao: "Um RPG com evolução de personagens, habilidades e escolhas ao longo da jornada. Monte sua estratégia, conheça aliados e explore o universo de Dragon Age: Origins." },
+  { id: 179, titulo: "Dragon Age: Inquisition", categoria: "RPG", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.5, cores: ["#0f4c75", "#b388ff"],
+    descricao: "Um RPG com evolução de personagens, habilidades e escolhas ao longo da jornada. Monte sua estratégia, conheça aliados e explore o universo de Dragon Age: Inquisition." },
+  { id: 180, titulo: "Dragon's Dogma: Dark Arisen", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.3, cores: ["#2f6b3a", "#5c3a1d"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Dragon's Dogma: Dark Arisen." },
+  { id: 181, titulo: "Dragon's Dogma 2", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.7, cores: ["#b45309", "#1d4f5c"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Dragon's Dogma 2." },
+  { id: 182, titulo: "Dragon Quest XI S: Echoes of an Elusive Age", categoria: "RPG", ano: null, plataforma: "Variadas (verificar por versão)", nota: 9.0, cores: ["#b388ff", "#7a0b1f"],
+    descricao: "Um RPG com evolução de personagens, habilidades e escolhas ao longo da jornada. Monte sua estratégia, conheça aliados e explore o universo de Dragon Quest XI S: Echoes of an Elusive Age." },
+  { id: 183, titulo: "Dragon Quest Builders 2", categoria: "RPG", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.2, cores: ["#5c3a1d", "#1f2a60"],
+    descricao: "Um RPG com evolução de personagens, habilidades e escolhas ao longo da jornada. Monte sua estratégia, conheça aliados e explore o universo de Dragon Quest Builders 2." },
+  { id: 184, titulo: "Dredge", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.1, cores: ["#1d4f5c", "#7b2fe0"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Dredge." },
+  { id: 185, titulo: "Dying Light", categoria: "Terror", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.4, cores: ["#7a0b1f", "#e11d48"],
+    descricao: "Uma experiência de suspense e tensão, com perigos, exploração e momentos de grande impacto. Descubra os segredos e tente sobreviver em Dying Light." },
+  { id: 186, titulo: "Dying Light 2 Stay Human", categoria: "Terror", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.1, cores: ["#1f2a60", "#0f4c75"],
+    descricao: "Uma experiência de suspense e tensão, com perigos, exploração e momentos de grande impacto. Descubra os segredos e tente sobreviver em Dying Light 2 Stay Human." },
+  { id: 187, titulo: "EarthBound", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 9.0, cores: ["#7b2fe0", "#2f6b3a"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de EarthBound." },
+  { id: 188, titulo: "Eiyuden Chronicle: Hundred Heroes", categoria: "RPG", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.9, cores: ["#e11d48", "#b45309"],
+    descricao: "Um RPG com evolução de personagens, habilidades e escolhas ao longo da jornada. Monte sua estratégia, conheça aliados e explore o universo de Eiyuden Chronicle: Hundred Heroes." },
+  { id: 189, titulo: "Ender Lilies: Quietus of the Knights", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.2, cores: ["#0f4c75", "#b388ff"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Ender Lilies: Quietus of the Knights." },
+  { id: 190, titulo: "Ender Magnolia: Bloom in the Mist", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.0, cores: ["#2f6b3a", "#5c3a1d"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Ender Magnolia: Bloom in the Mist." },
+  { id: 191, titulo: "Eternal Darkness: Sanity's Requiem", categoria: "Terror", ano: null, plataforma: "Variadas (verificar por versão)", nota: 9.2, cores: ["#b45309", "#1d4f5c"],
+    descricao: "Uma experiência de suspense e tensão, com perigos, exploração e momentos de grande impacto. Descubra os segredos e tente sobreviver em Eternal Darkness: Sanity's Requiem." },
+  { id: 192, titulo: "Everybody's Gone to the Rapture", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.7, cores: ["#b388ff", "#7a0b1f"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Everybody's Gone to the Rapture." },
+  { id: 193, titulo: "Everspace 2", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.2, cores: ["#5c3a1d", "#1f2a60"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Everspace 2." },
+  { id: 194, titulo: "F-Zero GX", categoria: "Corrida", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.9, cores: ["#1d4f5c", "#7b2fe0"],
+    descricao: "Dispute provas em pistas e ambientes variados, buscando melhorar seu desempenho e dominar cada curva em F-Zero GX." },
+  { id: 195, titulo: "Fable", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.9, cores: ["#7a0b1f", "#e11d48"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Fable." },
+  { id: 196, titulo: "Fable II", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 8.9, cores: ["#1f2a60", "#0f4c75"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Fable II." },
+  { id: 197, titulo: "Fable III", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.7, cores: ["#7b2fe0", "#2f6b3a"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Fable III." },
+  { id: 198, titulo: "Farming Simulator 22", categoria: "Simulação", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.8, cores: ["#e11d48", "#b45309"],
+    descricao: "Uma experiência de simulação em que você administra atividades, experimenta possibilidades e desenvolve seu próprio ritmo em Farming Simulator 22." },
+  { id: 199, titulo: "Fe", categoria: "Aventura", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.1, cores: ["#0f4c75", "#b388ff"],
+    descricao: "Uma jornada focada em exploração, descobertas e personagens marcantes. Avance por cenários variados, descubra segredos e acompanhe uma história própria de Fe." },
+  { id: 200, titulo: "FIFA 23", categoria: "Esporte", ano: null, plataforma: "Variadas (verificar por versão)", nota: 7.7, cores: ["#2f6b3a", "#5c3a1d"],
+    descricao: "Uma experiência esportiva com foco em habilidade, estratégia e competição. Participe de partidas e torneios em FIFA 23." }
 ];
  
 // 2) ESTADO --------------------------------------------------
@@ -281,15 +451,18 @@ function jogosFiltrados() {
     .filter(j => j.titulo.toLowerCase().includes(termo))
     .filter(j => !estado.apenasFavoritos || estado.favoritos.has(j.id))
     .sort((a, b) => {
-      if (estado.ordem === "nota") return b.nota - a.nota;
-      if (estado.ordem === "ano") return b.ano - a.ano;
+      if (estado.ordem === "nota") return (b.nota ?? -1) - (a.nota ?? -1);
+      if (estado.ordem === "ano") return (b.ano ?? -1) - (a.ano ?? -1);
       return a.titulo.localeCompare(b.titulo, "pt-BR");
     });
 }
  
 function criarCard(jogo) {
   const favorito = estado.favoritos.has(jogo.id);
-  const estrelas = "★".repeat(Math.round(jogo.nota / 2)) + "☆".repeat(5 - Math.round(jogo.nota / 2));
+  const notaFormatada = Number.isFinite(jogo.nota) ? jogo.nota.toFixed(1) : "Sem nota";
+  const estrelas = Number.isFinite(jogo.nota)
+    ? "★".repeat(Math.round(jogo.nota / 2)) + "☆".repeat(5 - Math.round(jogo.nota / 2))
+    : "☆☆☆☆☆";
   const col = document.createElement("div");
   col.className = "col-12 col-sm-6 col-lg-4 col-xl-3";
   col.innerHTML = `
@@ -299,7 +472,7 @@ function criarCard(jogo) {
         <!-- FRENTE -->
         <div class="game-card flip-face flip-front">
           <div class="game-capa" style="background:${gradiente(jogo.cores)}">
-            <span class="game-nota">★ ${jogo.nota.toFixed(1)}</span>
+            <span class="game-nota">★ ${notaFormatada}</span>
             <button type="button" class="btn-coracao ${favorito ? "ativo" : ""}"
                     data-acao="favoritar" data-id="${jogo.id}"
                     aria-pressed="${favorito}" aria-label="Favoritar ${jogo.titulo}">♥</button>
@@ -308,7 +481,7 @@ function criarCard(jogo) {
           <div class="game-body">
             <div class="d-flex gap-2 mb-2 flex-wrap">
               <span class="tag">${jogo.categoria}</span>
-              <span class="tag tag-vermelha">${jogo.ano}</span>
+              <span class="tag tag-vermelha">${jogo.ano ?? "Ano não informado"}</span>
             </div>
             <h3 class="game-titulo">${jogo.titulo}</h3>
             <p class="dica-virar mt-auto mb-0">↻ Clique no card para ver a descrição</p>
@@ -318,7 +491,7 @@ function criarCard(jogo) {
         <!-- VERSO -->
         <div class="game-card flip-face flip-back" style="--c1:${jogo.cores[0]}">
           <h3 class="game-titulo">${jogo.titulo}</h3>
-          <p class="estrelas" aria-label="Nota ${jogo.nota.toFixed(1)} de 10">${estrelas}</p>
+          <p class="estrelas" aria-label="Nota ${Number.isFinite(jogo.nota) ? `${notaFormatada} de 10` : "não disponível"}">${estrelas}</p>
           <p class="verso-desc">${jogo.descricao}</p>
           <p class="verso-info mb-3"><strong>Plataformas:</strong> ${jogo.plataforma}</p>
           <div class="d-flex gap-2 mt-auto">
@@ -355,11 +528,12 @@ function renderizarFiltros() {
 }
  
 function renderizarEstatisticas() {
-  const media = jogos.reduce((soma, j) => soma + j.nota, 0) / jogos.length;
+  const jogosComNota = jogos.filter(j => Number.isFinite(j.nota));
+  const media = jogosComNota.reduce((soma, j) => soma + j.nota, 0) / jogosComNota.length;
   const valores = {
     statTotal: jogos.length,
     statCategorias: new Set(jogos.map(j => j.categoria)).size,
-    statNota: media.toFixed(1)
+    statNota: Number.isFinite(media) ? media.toFixed(1) : "—"
   };
   // Só preenche os números se a página tiver esses elementos (a página do catálogo não tem)
   Object.entries(valores).forEach(([id, valor]) => {
@@ -386,7 +560,7 @@ function abrirDetalhes(id) {
   document.getElementById("modalCapa").style.background = gradiente(j.cores);
   document.getElementById("modalTitulo").textContent = j.titulo;
   document.getElementById("modalDescricao").textContent = j.descricao;
-  document.getElementById("modalInfo").textContent = `Plataformas: ${j.plataforma} · Lançamento: ${j.ano} · Nota: ${j.nota.toFixed(1)}`;
+  document.getElementById("modalInfo").textContent = `Plataformas: ${j.plataforma} · Lançamento: ${j.ano ?? "não informado"} · Nota: ${Number.isFinite(j.nota) ? j.nota.toFixed(1) : "não disponível"}`;
   document.getElementById("modalTags").innerHTML =
     `<span class="tag">${j.categoria}</span><span class="tag tag-vermelha">${j.ano}</span>`;
   atualizarBotaoModal();
