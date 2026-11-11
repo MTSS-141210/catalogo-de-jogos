@@ -206,3 +206,59 @@ footer { color: var(--texto-suave); }
   background: radial-gradient(circle at 90% 0%, rgba(123, 47, 224, .35), transparent 50%);
   border-bottom: 1px solid var(--borda);
 }
+
+.form-label { font-weight: 500; }
+.campo-ajuda { color: var(--texto-suave); font-size: .85rem; }
+textarea.form-control { resize: vertical; }
+
+.form-control.is-invalid, .form-select.is-invalid { border-color: var(--vermelho); }
+.invalid-feedback { color: #ff7a93; }
+
+.form-range::-webkit-slider-thumb { background: var(--roxo-500); }
+.form-range::-moz-range-thumb { background: var(--roxo-500); }
+.form-range:focus::-webkit-slider-thumb { box-shadow: 0 0 0 .2rem rgba(123, 47, 224, .35); }
+
+.fieldset-cores {
+  border: 1px solid var(--borda); border-radius: 12px;
+  padding: 1rem 1.1rem; background: var(--grafite);
+}
+.fieldset-cores legend { float: none; width: auto; padding: 0 .4rem; margin-bottom: 0; font-size: 1rem; }
+
+.seletor-cor { display: flex; align-items: center; gap: .6rem; }
+.seletor-cor label { font-size: .9rem; color: var(--texto-suave); }
+.seletor-cor input[type="color"] {
+  width: 56px; height: 40px; padding: 2px; cursor: pointer;
+  background: var(--preto); border: 1px solid var(--borda); border-radius: 8px;
+}
+
+.preset {
+  width: 44px; height: 32px; border-radius: 8px; cursor: pointer;
+  border: 2px solid var(--borda);
+  transition: border-color .15s, transform .15s;
+}
+.preset:hover { transform: scale(1.08); }
+.preset[aria-pressed="true"] { border-color: #fff; }
+
+.preview-sticky { position: sticky; top: 96px; }
+.preview-card { height: auto; }
+.preview-card .game-capa { height: 200px; }
+.preview-card .game-body { min-height: 130px; }
+
+.lista-salvos { display: grid; gap: .75rem; }
+.item-salvo {
+  display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+  background: var(--grafite); border: 1px solid var(--borda);
+  border-radius: 12px; padding: .75rem 1rem;
+}
+.item-salvo .amostra { width: 48px; height: 48px; border-radius: 10px; flex: none; }
+.item-salvo .info { flex: 1; min-width: 160px; }
+.item-salvo .info strong { display: block; font-family: 'Bricolage Grotesque', sans-serif; }
+.item-salvo .info span { color: var(--texto-suave); font-size: .88rem; }
+.btn-remover { border: 1px solid var(--vermelho); color: #ff7a93; background: transparent; border-radius: 8px; }
+.btn-remover:hover, .btn-remover:focus-visible { background: var(--vermelho); color: #fff; }
+
+.alert-arcanum-ok, .alert-arcanum-erro {
+  border-radius: 10px; padding: .75rem 1rem; border: 1px solid;
+}
+.alert-arcanum-ok { background: rgba(123, 47, 224, .15); border-color: var(--roxo-500); color: var(--roxo-300); }
+.alert-arcanum-erro { background: rgba(225, 29, 72, .12); border-color: var(--vermelho); color: #ff7a93; }

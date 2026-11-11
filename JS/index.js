@@ -403,6 +403,19 @@ const jogos = [
 ];
  
 // ESTADO --------------------------------------------------
+function lerJogosCustomizados() {
+  try {
+    const lista = JSON.parse(localStorage.getItem("arcanum:jogos-custom") || "[]");
+    return Array.isArray(lista) ? lista : [];
+  } catch (erro) {
+    return [];
+  }
+}
+
+function obterCatalogo() {
+  return [...jogos, ...lerJogosCustomizados()];
+}
+
 function lerFavoritos() {
   try {
     const valor = localStorage.getItem("arcanum:favoritos");
@@ -471,9 +484,11 @@ function formatarAno(jogo) {
 
 function jogosFiltrados() {
   const termo = estado.busca.trim().toLowerCase();
-  return jogos
+  const catalogo = obterCatalogo();
+  return catalogo
     .filter(j => !estado.apenasFavoritos || estado.favoritos.has(j.id))
     .filter(j => j.titulo.toLowerCase().includes(termo))
+    .filter(j => estado.categoria === "Todos" || j.categoria === estado.categoria)
     .sort((a, b) => {
       if (estado.ordem === "nota") return notaNumerica(b) - notaNumerica(a);
       if (estado.ordem === "ano") return (Number(b.ano) || 0) - (Number(a.ano) || 0);
@@ -535,7 +550,8 @@ function renderizarCatalogo() {
 
 function renderizarFiltros() {
   if (!$filtros) return;
-  const categorias = ["Todos", ...new Set(jogos.map(j => j.categoria))];
+  const catalogo = obterCatalogo();
+  const categorias = ["Todos", ...new Set(catalogo.map(j => j.categoria))];
   $filtros.replaceChildren(...categorias.map(cat => {
     const b = document.createElement("button");
     b.type = "button";
@@ -547,13 +563,14 @@ function renderizarFiltros() {
 }
 
 function renderizarEstatisticas() {
-  const notas = jogos
+  const catalogo = obterCatalogo();
+  const notas = catalogo
     .map(j => Number(j.nota))
     .filter(n => Number.isFinite(n));
   const media = notas.length ? notas.reduce((soma, n) => soma + n, 0) / notas.length : 0;
   const valores = {
-    statTotal: jogos.length,
-    statCategorias: new Set(jogos.map(j => j.categoria)).size,
+    statTotal: catalogo.length,
+    statCategorias: new Set(catalogo.map(j => j.categoria)).size,
     statNota: Number.isFinite(media) ? media.toFixed(1) : "—"
   };
   Object.entries(valores).forEach(([id, valor]) => {
@@ -581,7 +598,8 @@ function atualizarBotaoModal() {
 }
 
 function abrirDetalhes(id) {
-  const j = jogos.find(item => item.id === id);
+  const catalogo = obterCatalogo();
+  const j = catalogo.find(item => item.id === id);
   if (!j) return;
   estado.jogoAberto = id;
   const $modalCapa = document.getElementById("modalCapa");
@@ -642,6 +660,13 @@ const $modalFavorito = document.getElementById("modalFavorito");
 $modalFavorito?.addEventListener("click", () => alternarFavorito(estado.jogoAberto));
 
 window.addEventListener("storage", (e) => {
+  if (e.key === "arcanum:jogos-custom") {
+    renderizarEstatisticas();
+    renderizarFiltros();
+    renderizarCatalogo();
+    return;
+  }
+
   if (e.key !== "arcanum:favoritos") return;
   try {
     estado.favoritos = new Set(JSON.parse(e.newValue || "[]"));
