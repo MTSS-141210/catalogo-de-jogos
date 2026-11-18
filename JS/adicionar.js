@@ -1,6 +1,3 @@
-// Página "Adicionar jogo" -----------------------------------------
-// Os jogos ficam salvos no localStorage, na chave abaixo.
-// O JS/index.js lê essa mesma chave e junta os jogos ao catálogo.
 (() => {
   const CHAVE_JOGOS = "arcanum:jogos-custom";
   const CHAVE_FAVORITOS = "arcanum:favoritos";
@@ -291,6 +288,26 @@
   $listaSalvos.addEventListener("click", (e) => {
     const btn = e.target.closest(".btn-remover");
     if (btn) removerJogo(Number(btn.dataset.id));
+  });
+
+  // Add event listeners for navigation
+  document.addEventListener("DOMContentLoaded", () => {
+    const homeLink = document.querySelector('a[href="index.html"]');
+    const catalogLink = document.querySelector('a[href="catalogo.html"]');
+
+    if (homeLink) {
+      homeLink.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent default link behavior
+        window.location.href = "index.html"; // Navigate to home
+      });
+    }
+
+    if (catalogLink) {
+      catalogLink.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent default link behavior
+        window.location.href = "catalogo.html"; // Navigate to catalog
+      });
+    }
   });
 
   // ---------- início ----------

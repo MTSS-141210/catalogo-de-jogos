@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-bs-theme="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,115 +8,123 @@
   <title>Arcanum | Catálogo de Jogos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap"
+    rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="CSS/style.css">
+  <script src="JS/tema.js"></script>
 </head>
+
 <body data-pagina="favoritos">
 
-  <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top app-nav" aria-label="Navegação principal">
-      <div class="container">
-        <a class="navbar-brand" href="#inicio">Arcanum</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
-                aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menu">
-          <ul class="navbar-nav ms-auto align-items-md-center gap-md-2">
-            <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
-            <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
-            <li class="nav-item"><a class="nav-link" href="adicionar.html">Adicionar</a></li>
-            <li class="nav-item">
-              <a class="btn btn-sm btn-fav-nav" href="#favoritos">
-                ♥ Favoritos <span class="badge" id="contadorFavoritos">0</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <div class="app">
 
-  <main>
-    <section id="inicio" class="hero">
-      <div class="container">
-        <div class="row align-items-center g-4">
-          <div class="col-lg-7">
-            <h1 class="hero-title">Encontre o próximo jogo que vai te prender por horas.</h1>
-            <p class="hero-text">Explore o catálogo completo, favorite os títulos que mais chamarem sua atenção e acompanhe todos eles aqui.</p>
-            <a href="catalogo.html" class="btn btn-arcanum btn-lg me-2">Ver catálogo</a>
-            <a href="#favoritos" class="btn btn-outline-arcanum btn-lg">Meus favoritos</a>
+    <aside class="sidebar offcanvas-lg offcanvas-start" tabindex="-1" id="menu" aria-label="Navegação principal">
+      <div class="sidebar-marca">
+        <a class="marca" href="index.html">Arcanum<span>.</span></a>
+        <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas" data-bs-target="#menu"
+          aria-label="Fechar menu"></button>
+      </div>
+      <nav class="nav-app">
+        <a class="ativo" href="index.html" aria-current="page"><span class="ico" aria-hidden="true">⌂</span>Início</a>
+        <a href="catalogo.html"><span class="ico" aria-hidden="true">▦</span>Catálogo</a>
+        <a href="#favoritos"><span class="ico" aria-hidden="true">♥</span>Favoritos <span class="badge rounded-pill"
+            id="contadorFavoritos">0</span></a>
+        <a href="adicionar.html"><span class="ico" aria-hidden="true">＋</span>Adicionar jogo</a>
+      </nav>
+      <div class="sidebar-rodape">Projeto acadêmico<br>Feito por Matheus Suzigan</div>
+    </aside>
+
+    <div class="conteudo">
+      <header class="topbar">
+        <button type="button" class="btn-icone d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#menu"
+          aria-controls="menu" aria-label="Abrir menu">☰</button>
+        <h1>Início</h1>
+        <span class="espaco"></span>
+        <button type="button" class="btn-icone" id="btnTema" aria-label="Ativar modo claro"><span class="tema-icone"
+            aria-hidden="true">☀</span></button>
+      </header>
+
+      <main>
+        <section id="inicio" class="hero-fav" aria-labelledby="fanTitulo">
+          <h2 class="hero-title" id="fanTitulo">Seus jogos favoritos</h2>
+          <p class="hero-sub">Os últimos títulos que você favoritou ficam em destaque aqui.</p>
+          <div class="fan" id="fanFavoritos"></div>
+          <p class="fan-legenda" id="fanLegenda" aria-live="polite"></p>
+          <div class="hero-acoes">
+            <a href="catalogo.html" class="btn btn-arcanum btn-lg">Ver catálogo</a>
+            <a href="#favoritos" class="btn btn-outline-arcanum btn-lg">Todos os favoritos</a>
           </div>
-          <div class="col-lg-5">
-            <div class="hero-stats" aria-label="Resumo do catálogo">
-              <div><strong id="statTotal">0</strong><span>jogos</span></div>
-              <div><strong id="statCategorias">0</strong><span>categorias</span></div>
-              <div><strong id="statNota">0</strong><span>nota média</span></div>
+        </section>
+
+        <div class="stats" aria-label="Resumo do catálogo">
+          <div class="stat"><strong id="statTotal">0</strong><span>jogos</span></div>
+          <div class="stat"><strong id="statCategorias">0</strong><span>categorias</span></div>
+          <div class="stat"><strong id="statNota">0</strong><span>nota média</span></div>
+        </div>
+
+        <section id="favoritos" aria-labelledby="tituloFavoritos">
+          <div class="cabecalho-pagina">
+            <h2 class="section-title mb-1" id="tituloFavoritos">Meus favoritos</h2>
+            <p class="text-muted-arcanum mb-0" id="resultadoInfo" aria-live="polite"></p>
+          </div>
+
+          <div class="grade-jogos" id="listaJogos"></div>
+
+          <div class="estado-vazio d-none" id="estadoVazio">
+            <p class="mb-1 fw-bold">Você ainda não favoritou nenhum jogo.</p>
+            <p class="mb-3">Escolha seus preferidos no catálogo e eles aparecem aqui.</p>
+            <a href="catalogo.html" class="btn btn-arcanum">Ir para o catálogo</a>
+          </div>
+        </section>
+
+        <section id="sobre" class="sobre">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <h2 class="section-title">Sobre o projeto</h2>
+              <p class="mb-0">Arcanum é um catálogo de jogos feito para que você possa explorar e organizar seus jogos
+                favoritos de forma simples e intuitiva.</p>
+            </div>
+            <div class="col-md-6">
+              <h3 class="h5">Como usar</h3>
+              <ul class="mb-0">
+                <li>Abra o catálogo para filtrar por categoria e buscar jogos.</li>
+                <li>Clique no coração de um card para favoritar.</li>
+                <li>Os favoritos aparecem nesta página inicial.</li>
+                <li>Clique na capa ou em “Detalhes” para ler mais.</li>
+                <li>Use o botão ☀ / ☾ no topo para trocar entre modo claro e escuro.</li>
+              </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
+      </main>
 
-    <section id="favoritos" class="py-5">
-      <div class="container">
-        <div class="mb-4">
-          <h2 class="section-title mb-1">Meus favoritos</h2>
-          <p class="text-muted-arcanum mb-0" id="resultadoInfo" aria-live="polite"></p>
-        </div>
-
-        <div class="row g-4" id="listaJogos"></div>
-
-        <div class="estado-vazio d-none" id="estadoVazio">
-          <p class="mb-1 fw-bold">Você ainda não favoritou nenhum jogo.</p>
-          <p class="mb-3">Escolha seus preferidos no catálogo e eles aparecem aqui.</p>
-          <a href="catalogo.html" class="btn btn-arcanum">Ir para o catálogo</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="sobre" class="py-5 sobre">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-md-6">
-            <h2 class="section-title">Sobre o projeto</h2>
-            <p>Arcanum é um catálogo de jogos feito para que voçê possa explorar e organizar seus jogos favoritos de forma simples e intuitiva.</p>
-          </div>
-          <div class="col-md-6">
-            <h3 class="h5">Como usar</h3>
-            <ul class="mb-0">
-              <li>Abra o catálogo para filtrar por categoria e buscar jogos.</li>
-              <li>Clique no coração de um card para favoritar.</li>
-              <li>Os favoritos aparecem nesta página inicial.</li>
-              <li>Clique em um card para virá-lo e em “Detalhes” para ler mais.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="py-4 text-center">
-    <small>© 2026 Arcanum · Projeto acadêmico · Feito por Matheus Suzigan</small>
-  </footer>
+      <footer class="rodape">
+        <small>© 2026 Arcanum · Projeto acadêmico · Feito por Matheus Suzigan</small>
+      </footer>
+    </div>
+  </div>
 
   <div class="modal fade" id="modalJogo" tabindex="-1" aria-labelledby="modalTitulo" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
-        <div class="modal-capa" id="modalCapa"></div>
-        <div class="modal-header border-0 pb-0">
-          <h2 class="modal-title h4" id="modalTitulo"></h2>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
-        </div>
-        <div class="modal-body">
-          <div class="d-flex flex-wrap gap-2 mb-3" id="modalTags"></div>
-          <p id="modalDescricao"></p>
-          <p class="mb-0 text-muted-arcanum" id="modalInfo"></p>
-        </div>
-        <div class="modal-footer border-0">
-          <button type="button" class="btn btn-outline-arcanum" id="modalFavorito"></button>
-          <button type="button" class="btn btn-arcanum" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        <div class="row g-0">
+          <div class="col-md-5 modal-capa-col">
+            <div class="capa modal-capa" id="modalCapa"></div>
+          </div>
+          <div class="col-md-7 p-4 d-flex flex-column">
+            <h2 class="h3 pe-4" id="modalTitulo"></h2>
+            <div class="tags mb-3" id="modalTags"></div>
+            <p class="estrelas mb-3" id="modalEstrelas"></p>
+            <p id="modalDescricao"></p>
+            <p class="text-muted-arcanum" id="modalInfo"></p>
+            <div class="d-flex flex-wrap gap-2 mt-auto pt-3">
+              <button type="button" class="btn btn-outline-arcanum" id="modalFavorito"></button>
+              <button type="button" class="btn btn-arcanum" data-bs-dismiss="modal">Fechar</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -123,5 +132,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="JS/index.js"></script>
+  <script src="JS/app.js"></script>
 </body>
+
 </html>
