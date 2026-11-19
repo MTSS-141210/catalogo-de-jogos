@@ -66,6 +66,10 @@ const $contador = document.getElementById("contadorFavoritos");
 const $modalEl = document.getElementById("modalJogo");
 const $fan = document.getElementById("fanFavoritos");
 
+let fanIndice = 0;
+let fanTimer = null;
+let fanToqueX = null;
+
 // UTILIDADES ----------------------------------------------
 const gradiente = (cores) => `linear-gradient(135deg, ${cores[0]}, ${cores[1]})`;
 
@@ -196,17 +200,16 @@ function renderizarCatalogo() {
   }
 }
 
-// Fila de destaque da página inicial (estilo vitrine): últimos favoritos,
-// ou os mais bem avaliados quando ainda não há favoritos.
+// Vitrine da página inicial: cinco jogos do catálogo em destaque.
 function renderizarFan() {
   if (!$fan) return;
-  const catalogo = obterCatalogo();
-  let lista = [...estado.favoritos].reverse()
-    .map(id => catalogo.find(j => j.id === id)).filter(Boolean).slice(0, 5);
-  const sugestao = lista.length === 0;
-  if (sugestao) lista = [...catalogo].sort((a, b) => notaNumerica(b) - notaNumerica(a)).slice(0, 5);
+  const catalogo = [...obterCatalogo()].sort((a, b) => notaNumerica(b) - notaNumerica(a));
+  if (!catalogo.length) return;
 
-  const meio = (lista.length - 1) / 2;
+  const inicio = fanIndice % catalogo.length;
+  const lista = Array.from({ length: 5 }, (_, i) => catalogo[(inicio + i) % catalogo.length]);
+  const meio = 2;
+
   $fan.replaceChildren(...lista.map((j, i) => {
     const b = document.createElement("button");
     b.type = "button";
@@ -219,13 +222,45 @@ function renderizarFan() {
     return b;
   }));
 
-  const titulo = document.getElementById("fanTitulo");
   const legenda = document.getElementById("fanLegenda");
-  if (titulo) titulo.textContent = sugestao ? "Comece pelos mais bem avaliados" : "Seus jogos favoritos";
-  if (legenda) legenda.textContent = sugestao
-    ? "Você ainda não favoritou nada. Estes são os jogos com as melhores notas."
-    : `${estado.favoritos.size} ${estado.favoritos.size === 1 ? "jogo favoritado" : "jogos favoritados"}. Clique em um para ver os detalhes.`;
+  if (legenda) legenda.textContent = "Clique em um card para ver os detalhes do jogo.";
 }
+
+function mudarFan(delta) {
+  const total = Math.min(10, obterCatalogo().length);
+  if (!total) return;
+  fanIndice = (fanIndice + delta + total) % total;
+  renderizarFan();
+}
+
+function reiniciarFan() {
+  renderizarFan();
+  if (fanTimer) clearInterval(fanTimer);
+  fanTimer = setInterval(() => {
+    mudarFan(1);
+  }, 3500);
+}
+
+const $fanAnterior = document.getElementById("fanAnterior");
+const $fanProximo = document.getElementById("fanProximo");
+$fanAnterior?.addEventListener("click", () => reiniciarFanComDelta(-1));
+$fanProximo?.addEventListener("click", () => reiniciarFanComDelta(1));
+
+function reiniciarFanComDelta(delta) {
+  mudarFan(delta);
+  if (fanTimer) clearInterval(fanTimer);
+  fanTimer = setInterval(() => mudarFan(1), 3500);
+}
+
+$fan?.addEventListener("touchstart", (e) => {
+  fanToqueX = e.touches[0].clientX;
+}, { passive: true });
+$fan?.addEventListener("touchend", (e) => {
+  if (fanToqueX === null) return;
+  const distancia = e.changedTouches[0].clientX - fanToqueX;
+  if (Math.abs(distancia) > 45) reiniciarFanComDelta(distancia > 0 ? -1 : 1);
+  fanToqueX = null;
+}, { passive: true });
 
 function renderizarFiltros() {
   if (!$filtros) return;
@@ -257,7 +292,7 @@ function renderizarEstatisticas() {
 
 function renderizarTudo() {
   renderizarCatalogo();
-  renderizarFan();
+  reiniciarFan();
 }
 
 // MODAL ---------------------------------------------------

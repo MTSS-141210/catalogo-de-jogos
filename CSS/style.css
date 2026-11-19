@@ -899,6 +899,78 @@ textarea.form-control {
   color: #b91c1c;
 }
 
+.fan-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.fan-seta {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  width: 42px;
+  height: 42px;
+  transform: translateY(-50%);
+  border: 1px solid var(--borda);
+  border-radius: 50%;
+  background: rgba(18, 18, 18, .82);
+  color: #fff;
+  font-size: 2rem;
+  line-height: 32px;
+  cursor: pointer;
+  transition: background .2s, border-color .2s, transform .2s;
+}
+
+.fan-seta:hover {
+  background: var(--destaque);
+  border-color: var(--destaque);
+  color: var(--on-destaque);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.fan-anterior { left: .25rem; }
+.fan-proximo { right: .25rem; }
+
+.fan-dots {
+  display: flex;
+  justify-content: center;
+  gap: .45rem;
+  margin: -.55rem 0 1.15rem;
+}
+
+.fan-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--texto-suave);
+  opacity: .55;
+  transition: width .2s, opacity .2s, background .2s;
+}
+
+.fan-dot.ativo {
+  width: 24px;
+  background: var(--destaque);
+  opacity: 1;
+}
+
+.fan-card {
+  transition: transform .35s ease, opacity .35s ease, border-color .2s;
+}
+
+.fan-card[data-d="1"] { opacity: .88; }
+.fan-card[data-d="2"] { opacity: .72; }
+
+@media (max-width: 575.98px) {
+  .fan-seta { width: 36px; height: 36px; }
+  .fan-anterior { left: 0; }
+  .fan-proximo { right: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;

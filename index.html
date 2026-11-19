@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Catálogo de jogos com busca, categorias, favoritos e descrições.">
+  <meta name="description" content="Catálogo de jogos com busca, categorias e descrições.">
   <title>Arcanum | Catálogo de Jogos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
   <script src="JS/tema.js"></script>
 </head>
 
-<body data-pagina="favoritos">
+<body>
 
   <div class="app">
 
@@ -29,8 +29,8 @@
       <nav class="nav-app">
         <a class="ativo" href="index.html" aria-current="page"><span class="ico" aria-hidden="true">⌂</span>Início</a>
         <a href="catalogo.html"><span class="ico" aria-hidden="true">▦</span>Catálogo</a>
-        <a href="#favoritos"><span class="ico" aria-hidden="true">♥</span>Favoritos <span class="badge rounded-pill"
-            id="contadorFavoritos">0</span></a>
+        <a href="favoritos.html"><span class="ico" aria-hidden="true">♥</span>Favoritos <span
+            class="badge rounded-pill" id="contadorFavoritos">0</span></a>
         <a href="adicionar.html"><span class="ico" aria-hidden="true">＋</span>Adicionar jogo</a>
       </nav>
       <div class="sidebar-rodape">Projeto acadêmico<br>Feito por Matheus Suzigan</div>
@@ -48,13 +48,12 @@
 
       <main>
         <section id="inicio" class="hero-fav" aria-labelledby="fanTitulo">
-          <h2 class="hero-title" id="fanTitulo">Seus jogos favoritos</h2>
-          <p class="hero-sub">Os últimos títulos que você favoritou ficam em destaque aqui.</p>
-          <div class="fan" id="fanFavoritos"></div>
-          <p class="fan-legenda" id="fanLegenda" aria-live="polite"></p>
+          <h2 class="hero-title" id="fanTitulo">Novidades do catálogo</h2>
+          <p class="hero-sub">Descubra alguns dos jogos mais bem avaliados da nossa seleção.</p>
+          <div class="fan" id="fanFavoritos" aria-label="Cinco jogos em destaque"></div>
           <div class="hero-acoes">
             <a href="catalogo.html" class="btn btn-arcanum btn-lg">Ver catálogo</a>
-            <a href="#favoritos" class="btn btn-outline-arcanum btn-lg">Todos os favoritos</a>
+            <a href="adicionar.html" class="btn btn-outline-arcanum btn-lg">Adicionar jogo</a>
           </div>
         </section>
 
@@ -64,34 +63,17 @@
           <div class="stat"><strong id="statNota">0</strong><span>nota média</span></div>
         </div>
 
-        <section id="favoritos" aria-labelledby="tituloFavoritos">
-          <div class="cabecalho-pagina">
-            <h2 class="section-title mb-1" id="tituloFavoritos">Meus favoritos</h2>
-            <p class="text-muted-arcanum mb-0" id="resultadoInfo" aria-live="polite"></p>
-          </div>
-
-          <div class="grade-jogos" id="listaJogos"></div>
-
-          <div class="estado-vazio d-none" id="estadoVazio">
-            <p class="mb-1 fw-bold">Você ainda não favoritou nenhum jogo.</p>
-            <p class="mb-3">Escolha seus preferidos no catálogo e eles aparecem aqui.</p>
-            <a href="catalogo.html" class="btn btn-arcanum">Ir para o catálogo</a>
-          </div>
-        </section>
-
         <section id="sobre" class="sobre">
           <div class="row g-4">
             <div class="col-md-6">
               <h2 class="section-title">Sobre o projeto</h2>
-              <p class="mb-0">Arcanum é um catálogo de jogos feito para que você possa explorar e organizar seus jogos
-                favoritos de forma simples e intuitiva.</p>
+              <p class="mb-0">Arcanum é um catálogo de jogos feito para explorar títulos e descobrir novas opções de forma simples e intuitiva.</p>
             </div>
             <div class="col-md-6">
               <h3 class="h5">Como usar</h3>
               <ul class="mb-0">
                 <li>Abra o catálogo para filtrar por categoria e buscar jogos.</li>
-                <li>Clique no coração de um card para favoritar.</li>
-                <li>Os favoritos aparecem nesta página inicial.</li>
+                <li>Clique no coração de um card no catálogo para salvar como favorito.</li>
                 <li>Clique na capa ou em “Detalhes” para ler mais.</li>
                 <li>Use o botão ☀ / ☾ no topo para trocar entre modo claro e escuro.</li>
               </ul>
@@ -111,9 +93,7 @@
       <div class="modal-content">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
         <div class="row g-0">
-          <div class="col-md-5 modal-capa-col">
-            <div class="capa modal-capa" id="modalCapa"></div>
-          </div>
+          <div class="col-md-5 modal-capa-col"><div class="capa modal-capa" id="modalCapa"></div></div>
           <div class="col-md-7 p-4 d-flex flex-column">
             <h2 class="h3 pe-4" id="modalTitulo"></h2>
             <div class="tags mb-3" id="modalTags"></div>
