@@ -1,3 +1,6 @@
+// Página "Adicionar jogo" -----------------------------------------
+// Os jogos ficam salvos no localStorage, na chave abaixo.
+// O JS/app.js lê essa mesma chave e junta os jogos ao catálogo.
 (() => {
   const CHAVE_JOGOS = "arcanum:jogos-custom";
   const CHAVE_FAVORITOS = "arcanum:favoritos";
@@ -13,7 +16,7 @@
     ["#0f4c75", "#b388ff"],
     ["#2f6b3a", "#7b2fe0"],
     ["#b45309", "#7a0b1f"],
-    ["#111111", "#e11d48"],
+    ["#111111", "#F97316"],
     ["#f2d600", "#7b2fe0"],
     ["#1d4f5c", "#b45309"]
   ];
@@ -29,12 +32,18 @@
     plataforma: $("plataforma"),
     descricao: $("descricao"),
     cor1: $("cor1"),
-    cor2: $("cor2")
+    cor2: $("cor2"),
+    arquivo: $("imagemArquivo"),
+    url: $("imagemUrl")
   };
   const $mensagem = $("mensagem");
   const $listaSalvos = $("listaSalvos");
   const $resumo = $("resumoSalvos");
   const $presets = $("presets");
+  const $prevImg = $("prevImg");
+  const $erroImagem = $("erroImagem");
+
+  let imagemArquivo = ""; // capa enviada pelo computador (data URL já reduzida)
 
   // ---------- armazenamento ----------
   function lerSalvos() {
@@ -65,6 +74,14 @@
     return Number.isFinite(n) ? Math.min(10, Math.max(0, n)) : NaN;
   }
 
+  function urlValida() {
+    const t = campos.url.value.trim();
+    return /^https?:\/\/[^\s"'<>]+$/i.test(t) ? t : "";
+  }
+
+  // Imagem que será usada: o arquivo enviado tem prioridade sobre o link
+  const imagemEfetiva = () => imagemArquivo || urlValida();
+
   function mostrarMensagem(texto, tipo) {
     $mensagem.className = "mt-3 " + (tipo === "erro" ? "alert-arcanum-erro" : "alert-arcanum-ok");
     $mensagem.textContent = texto;
@@ -74,6 +91,35 @@
     $mensagem.className = "mt-3";
     $mensagem.textContent = "";
   }
+
+  // ---------- imagem ----------
+  // Reduz a imagem (lado maior = 520px) e converte para JPEG, para caber no localStorage
+  function reduzirImagem(arquivo) {
+    return new Promise((resolve, reject) => {
+      if (!arquivo.type.startsWith("image/")) return reject(new Error("Escolha um arquivo de imagem."));
+      const url = URL.createObjectURL(arquivo);
+      const img = new Image();
+      img.onload = () => {
+        const escala = Math.min(1, 520 / Math.max(img.width, img.height));
+        const c = document.createElement("canvas");
+        c.width = Math.max(1, Math.round(img.width * escala));
+        c.height = Math.max(1, Math.round(img.height * escala));
+        const ctx = c.getContext("2d");
+        ctx.fillStyle = "#1E1E1E";
+        ctx.fillRect(0, 0, c.width, c.height);
+        ctx.drawImage(img, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(url);
+        resolve(c.toDataURL("image/jpeg", 0.82));
+      };
+      img.onerror = () => {
+        URL.revokeObjectURL(url);
+        reject(new Error("Não foi possível ler essa imagem."));
+      };
+      img.src = url;
+    });
+  }
+
+  $prevImg.addEventListener("error", () => { $prevImg.hidden = true; });
 
   // ---------- categorias (datalist) ----------
   function atualizarCategorias() {
@@ -91,11 +137,20 @@
     const nota = lerNota();
     $("prevCapa").style.background = gradiente(campos.cor1.value, campos.cor2.value);
     $("prevTitulo").textContent = limpar(campos.titulo.value) || "Nome do jogo";
-    $("prevNota").textContent = "★ " + (Number.isFinite(nota) && nota > 0 ? nota.toFixed(1) : "—");
+    $("prevNota").textContent = Number.isFinite(nota) && nota > 0 ? nota.toFixed(1) : "—";
     $("prevCategoria").textContent = limpar(campos.categoria.value) || "Categoria";
     $("prevAno").textContent = campos.ano.value || "Ano";
     $("prevDescricao").textContent = limpar(campos.descricao.value) || "A descrição aparece aqui enquanto você digita.";
     $("contadorDescricao").textContent = `${campos.descricao.value.length}/400`;
+
+    const imagem = imagemEfetiva();
+    if (imagem) {
+      if ($prevImg.getAttribute("src") !== imagem) $prevImg.src = imagem;
+      $prevImg.hidden = false;
+    } else {
+      $prevImg.hidden = true;
+      $prevImg.removeAttribute("src");
+    }
 
     $presets.querySelectorAll(".preset").forEach((b) => {
       const igual = b.dataset.c1 === campos.cor1.value && b.dataset.c2 === campos.cor2.value;
@@ -137,6 +192,11 @@
         primeiroInvalido = primeiroInvalido || campo;
       }
     });
+    if (campos.url.value.trim() && !urlValida()) {
+      $erroImagem.textContent = "O link precisa começar com http:// ou https://.";
+      valido = false;
+      primeiroInvalido = primeiroInvalido || campos.url;
+    }
     if (primeiroInvalido) primeiroInvalido.focus();
     return valido;
   }
@@ -154,7 +214,8 @@
 
       const amostra = document.createElement("div");
       amostra.className = "amostra";
-      amostra.style.background = gradiente(j.cores[0], j.cores[1]);
+      const fundo = gradiente(j.cores[0], j.cores[1]);
+      amostra.style.backgroundImage = j.imagem ? `url("${j.imagem}"), ${fundo}` : fundo;
 
       const info = document.createElement("div");
       info.className = "info";
@@ -227,10 +288,12 @@
       cores: [campos.cor1.value, campos.cor2.value],
       descricao: limpar(campos.descricao.value)
     };
+    const imagem = imagemEfetiva();
+    if (imagem) jogo.imagem = imagem;
 
     lista.push(jogo);
     if (!gravarSalvos(lista)) {
-      mostrarMensagem("Não foi possível salvar. O navegador pode estar bloqueando o armazenamento local.", "erro");
+      mostrarMensagem("Não foi possível salvar. O armazenamento do navegador pode estar cheio ou bloqueado. Tente uma imagem menor ou remova jogos antigos.", "erro");
       return;
     }
 
@@ -242,6 +305,8 @@
 
   function resetarCampos() {
     $form.reset();
+    imagemArquivo = "";
+    $erroImagem.textContent = "";
     campos.ano.value = new Date().getFullYear();
     campos.nota.value = "8.0";
     campos.notaRange.value = "8";
@@ -267,6 +332,37 @@
     if (Number.isFinite(n)) campos.notaRange.value = n;
   });
 
+  campos.arquivo.addEventListener("change", async () => {
+    $erroImagem.textContent = "";
+    const arquivo = campos.arquivo.files[0];
+    if (!arquivo) { imagemArquivo = ""; atualizarPreview(); return; }
+    try {
+      imagemArquivo = await reduzirImagem(arquivo);
+      campos.url.value = "";
+    } catch (erro) {
+      imagemArquivo = "";
+      campos.arquivo.value = "";
+      $erroImagem.textContent = erro.message;
+    }
+    atualizarPreview();
+  });
+
+  campos.url.addEventListener("input", () => {
+    $erroImagem.textContent = "";
+    if (campos.url.value.trim()) {
+      imagemArquivo = "";
+      campos.arquivo.value = "";
+    }
+  });
+
+  $("btnRemoverImagem").addEventListener("click", () => {
+    imagemArquivo = "";
+    campos.arquivo.value = "";
+    campos.url.value = "";
+    $erroImagem.textContent = "";
+    atualizarPreview();
+  });
+
   $presets.addEventListener("click", (e) => {
     const b = e.target.closest(".preset");
     if (!b) return;
@@ -288,26 +384,6 @@
   $listaSalvos.addEventListener("click", (e) => {
     const btn = e.target.closest(".btn-remover");
     if (btn) removerJogo(Number(btn.dataset.id));
-  });
-
-  // Add event listeners for navigation
-  document.addEventListener("DOMContentLoaded", () => {
-    const homeLink = document.querySelector('a[href="index.html"]');
-    const catalogLink = document.querySelector('a[href="catalogo.html"]');
-
-    if (homeLink) {
-      homeLink.addEventListener("click", (event) => {
-        event.preventDefault(); // Prevent default link behavior
-        window.location.href = "index.html"; // Navigate to home
-      });
-    }
-
-    if (catalogLink) {
-      catalogLink.addEventListener("click", (event) => {
-        event.preventDefault(); // Prevent default link behavior
-        window.location.href = "catalogo.html"; // Navigate to catalog
-      });
-    }
   });
 
   // ---------- início ----------
