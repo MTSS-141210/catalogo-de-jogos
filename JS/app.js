@@ -1,6 +1,4 @@
-// Lógica do site (index.html e catalogo.html)
-// Depende do array `jogos`, que fica em JS/index.js (carregado antes deste arquivo).
-
+// base do app
 (() => {
 "use strict";
 
@@ -9,7 +7,7 @@ const CHAVE_FAVORITOS = "arcanum:favoritos";
 const PASTA_CAPAS = "IMG/capas/";
 const EXTENSOES = ["jpg", "png", "webp"];
 
-// `jogos` vem do JS/index.js
+// jogos q vem dojogos.js
 const BASE_JOGOS = (typeof jogos !== "undefined" && Array.isArray(jogos)) ? jogos : [];
 if (!BASE_JOGOS.length) console.error("Arcanum: o array `jogos` não foi encontrado. Confira se JS/index.js está na pasta JS e carrega antes do app.js.");
 
@@ -45,8 +43,6 @@ const estado = {
 };
 
 // DOM -----------------------------------------------------
-// Se o JS/index.js antigo (com a lógica velha) ainda estiver na página,
-// clonar os elementos remove os listeners antigos e evita comportamento duplicado.
 function renovar(id) {
   const el = document.getElementById(id);
   if (!el) return null;
@@ -79,7 +75,6 @@ function esc(texto) {
     .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 }
 
-// "Baldur's Gate 3" -> "baldurs-gate-3"
 function slug(texto) {
   return String(texto)
     .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
@@ -105,9 +100,6 @@ function estrelasTexto(jogo) {
 }
 
 // CAPAS ---------------------------------------------------
-// Procura IMG/capas/<titulo-em-slug>.jpg (depois .webp e .png).
-// Jogos adicionados pelo usuário usam o campo `imagem`.
-// Se nenhuma imagem existir, aparece o gradiente com o nome do jogo.
 function capaHTML(jogo) {
   const base = jogo.imagem ? "" : PASTA_CAPAS + slug(jogo.titulo);
   const src = jogo.imagem || `${base}.${EXTENSOES[0]}`;
@@ -116,7 +108,7 @@ function capaHTML(jogo) {
          `<img src="${esc(src)}" alt="Capa de ${esc(jogo.titulo)}" loading="lazy" decoding="async"${extra}>`;
 }
 
-// <img> não "borbulha" o evento de erro, por isso usamos a fase de captura
+// Tratamento das imagens
 document.addEventListener("error", (e) => {
   const img = e.target;
   if (!(img instanceof HTMLImageElement) || !img.closest(".capa")) return;
@@ -129,7 +121,6 @@ document.addEventListener("error", (e) => {
   }
 }, true);
 
-// Ajuda: no console do navegador, digite listarNomesDeCapas() para ver os nomes de arquivo esperados.
 window.listarNomesDeCapas = () => {
   const nomes = obterCatalogo().filter(j => !j.imagem).map(j => `${slug(j.titulo)}.jpg`);
   console.log(nomes.join("\n"));
@@ -200,7 +191,7 @@ function renderizarCatalogo() {
   }
 }
 
-// Vitrine da página inicial: cinco jogos do catálogo em destaque.
+// Vitrine da página inicial
 function renderizarFan() {
   if (!$fan) return;
   const catalogo = [...obterCatalogo()].sort((a, b) => notaNumerica(b) - notaNumerica(a));

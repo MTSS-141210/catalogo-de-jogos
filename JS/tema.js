@@ -1,5 +1,4 @@
-// Modo claro / escuro -------------------------------------------------
-// Carregado no <head> para aplicar o tema antes da página aparecer (sem "piscada").
+// Modo claro / escuro 
 (() => {
   const CHAVE = "arcanum:tema";
   const raiz = document.documentElement;

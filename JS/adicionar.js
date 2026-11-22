@@ -1,6 +1,4 @@
-// Página "Adicionar jogo" -----------------------------------------
-// Os jogos ficam salvos no localStorage, na chave abaixo.
-// O JS/app.js lê essa mesma chave e junta os jogos ao catálogo.
+//Adicionar jogo
 (() => {
   const CHAVE_JOGOS = "arcanum:jogos-custom";
   const CHAVE_FAVORITOS = "arcanum:favoritos";
@@ -65,7 +63,6 @@
   }
 
   // ---------- utilidades ----------
-  // Remove caracteres que quebrariam o HTML do catálogo (<, > e aspas duplas).
   const limpar = (texto) => String(texto).replace(/[<>"]/g, "").replace(/\s+/g, " ").trim();
   const gradiente = (c1, c2) => `linear-gradient(135deg, ${c1}, ${c2})`;
 
@@ -79,7 +76,7 @@
     return /^https?:\/\/[^\s"'<>]+$/i.test(t) ? t : "";
   }
 
-  // Imagem que será usada: o arquivo enviado tem prioridade sobre o link
+  // Imagem que será usada: o link
   const imagemEfetiva = () => imagemArquivo || urlValida();
 
   function mostrarMensagem(texto, tipo) {
@@ -93,7 +90,6 @@
   }
 
   // ---------- imagem ----------
-  // Reduz a imagem (lado maior = 520px) e converte para JPEG, para caber no localStorage
   function reduzirImagem(arquivo) {
     return new Promise((resolve, reject) => {
       if (!arquivo.type.startsWith("image/")) return reject(new Error("Escolha um arquivo de imagem."));
@@ -121,7 +117,7 @@
 
   $prevImg.addEventListener("error", () => { $prevImg.hidden = true; });
 
-  // ---------- categorias (datalist) ----------
+  // ---------- categorias ----------
   function atualizarCategorias() {
     const usadas = lerSalvos().map((j) => j.categoria);
     const todas = [...new Set([...CATEGORIAS_BASE, ...usadas])].sort((a, b) => a.localeCompare(b, "pt-BR"));
@@ -201,7 +197,7 @@
     return valido;
   }
 
-  // ---------- lista de jogos salvos ----------
+  // ---------- jogos salvos ----------
   function renderizarSalvos() {
     const lista = lerSalvos();
     $resumo.textContent = lista.length
@@ -245,7 +241,6 @@
 
     gravarSalvos(lista.filter((j) => j.id !== id));
 
-    // tira o jogo dos favoritos também, para o contador não ficar errado
     try {
       const favs = JSON.parse(localStorage.getItem(CHAVE_FAVORITOS) || "[]");
       localStorage.setItem(CHAVE_FAVORITOS, JSON.stringify(favs.filter((f) => f !== id)));
@@ -275,7 +270,6 @@
       return;
     }
 
-    // ids dos jogos criados aqui começam em 1000 para nunca colidir com os do catálogo base
     const id = Math.max(1000, ...lista.map((j) => j.id)) + 1;
 
     const jogo = {
