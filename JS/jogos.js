@@ -488,4 +488,18 @@ const jogos = [
     descricao: "Refeito do zero, com gráficos modernos, nova jogabilidade e opções de acessibilidade ampliadas." },
   { id: 244, titulo: "The Last of Us Part II Remastered", categoria: "Ação e Aventura", ano: 2024, plataforma: "PS5, PC", nota: 9.2, cores: ["#7a3a2f", "#2f5c4a"],
     descricao: "Versão aprimorada com o modo Sem Retorno, de combates roguelike, e comentários dos desenvolvedores." }
+  {id: 245, titulo: "Skate 2", categoria: "Esportes", ano: 2009, plataforma: "PS3, Xbox 360", nota: 8.8, cores: ["#3b526b", "#8b5a3b"],
+    descricao: "Explore uma cidade aberta, realize manobras radicais e crie seus próprios obstáculos para andar de skate."},
+  {id: 246, titulo: "Skate 3", categoria: "Esportes", ano: 2010, plataforma: "PS3, Xbox 360",nota: 9.2, cores: ["#2f5c6b", "#d18a42"],
+    descricao: "Monte sua própria equipe de skate, complete desafios e domine uma cidade cheia de pistas e possibilidades."},
+  { id: 247, titulo: "skate.", categoria: "Esportes", ano: 2025, plataforma: "PS5, Xbox Series X/S, PC",nota: 8.5, cores: ["#454545", "#a6a6a6"],
+    descricao: "Uma nova experiência gratuita de skate em mundo aberto, com exploração, manobras e recursos multiplayer."},
+  {id: 248, titulo: "Fortnite", categoria: "Battle Royale", ano: 2017, plataforma: "PC, PS4, PS5, Xbox, Switch, Mobile",nota: 9.0, cores: ["#6845a5", "#2f8cbd"],
+    descricao: "Entre em batalhas com até 100 jogadores, construa estruturas, explore diferentes modos e dispute para ser o último sobrevivente."},
+  { id: 249, titulo: "Goat Simulator", categoria: "Simulação", ano: 2014, plataforma: "PC, PS3, PS4, Xbox, Switch, Mobile", nota: 8.0, cores: ["#826b42", "#454545"],
+    descricao: "Controle uma cabra em um mundo aberto caótico, realizando destruições, acrobacias e situações completamente absurdas."},
+  {id: 250, titulo: "Goat Simulator 3", categoria: "Simulação", ano: 2022, plataforma: "PC, PS5, Xbox Series X/S, Switch",nota: 8.5, cores: ["#9b7845", "#55734a"],
+    descricao: "Uma aventura ainda mais caótica, com mundo aberto, multiplayer e inúmeras possibilidades de destruição."},
+  { id: 251, titulo: "Supermarket Simulator", categoria: "Simulação", ano: 2024, plataforma: "PC",nota: 8.2, cores: ["#4a806b", "#d6b85a"],
+    descricao: "Administre seu próprio supermercado, organize prateleiras, controle estoques, defina preços e atenda clientes."}
   ];
