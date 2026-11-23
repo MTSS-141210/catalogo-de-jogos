@@ -9,7 +9,7 @@ const EXTENSOES = ["jpg", "png", "webp"];
 
 // jogos q vem dojogos.js
 const BASE_JOGOS = (typeof jogos !== "undefined" && Array.isArray(jogos)) ? jogos : [];
-if (!BASE_JOGOS.length) console.error("Arcanum: o array `jogos` não foi encontrado. Confira se JS/index.js está na pasta JS e carrega antes do app.js.");
+if (!BASE_JOGOS.length) console.error("Arcanum: o array `jogos` não foi encontrado. Confira se JS/jogos.js está na pasta JS e carrega antes do app.js.");
 
 // ESTADO --------------------------------------------------
 function lerJogosCustomizados() {
@@ -288,6 +288,7 @@ function renderizarTudo() {
 
 // MODAL ---------------------------------------------------
 function abrirModal() {
+  if (!$modalEl) return;
   if (typeof bootstrap === "undefined") {
     alert("Não foi possível carregar o Bootstrap. Verifique sua conexão com a internet.");
     return;

@@ -270,7 +270,18 @@
       return;
     }
 
-    const id = Math.max(1000, ...lista.map((j) => j.id)) + 1;
+    if (typeof jogos !== "undefined" && Array.isArray(jogos) &&
+        jogos.some((j) => j.titulo.toLowerCase() === titulo.toLowerCase())) {
+      campos.titulo.classList.add("is-invalid");
+      campos.titulo.focus();
+      mostrarMensagem(`"${titulo}" já existe no catálogo principal.`, "erro");
+      return;
+    }
+
+    const ids = [...(Array.isArray(jogos) ? jogos.map((j) => j.id) : []), ...lista.map((j) => j.id)]
+      .filter((id) => Number.isFinite(Number(id)))
+      .map(Number);
+    const id = Math.max(1000, ...ids) + 1;
 
     const jogo = {
       id,

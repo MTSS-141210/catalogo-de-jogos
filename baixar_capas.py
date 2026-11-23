@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
-"""
-Baixa a imagem oficial (capa com o logo) de cada jogo de JS/index.js e salva em IMG/capas/.
+#
+""""" 
+Baixa a imagem oficial (capa com o logo) de cada jogo de JS/jogos.js e salva em IMG/capas/.
 Fonte: loja da Steam (sem chave, sem cadastro).
 
 Como usar (precisa de Python 3 e internet):
@@ -22,7 +22,7 @@ import urllib.request
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent
-ARQUIVO_JOGOS = RAIZ / "JS" / "index.js"
+ARQUIVO_JOGOS = RAIZ / "JS" / "jogos.js"
 PASTA_CAPAS = RAIZ / "IMG" / "capas"
 BUSCA = "https://store.steampowered.com/api/storesearch/"
 CDN = "https://cdn.akamai.steamstatic.com/steam/apps/{id}/{arq}"
