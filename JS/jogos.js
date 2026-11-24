@@ -1941,7 +1941,7 @@ const jogos = [
   { id: 1375, titulo: "Kingdom Hearts III + Re Mind", categoria: "RPG de Ação", ano: 2025, plataforma: "PC, PS4, Xbox One", nota: 8.0, cores: ["#7b2fe0", "#2f8cbd"], descricao: "O capítulo da saga de Xehanort, com mundos Disney." },
   { id: 1376, titulo: "Kingdom Hearts: Melody of Memory", categoria: "Puzzle", ano: 2020, plataforma: "PC, PS4, Xbox One, Switch", nota: 6.5, cores: ["#2f8cbd", "#b388ff"], descricao: "Jogo de ritmo com músicas de Kingdom Hearts." },
   { id: 1377, titulo: "DELTARUNE", categoria: "RPG", ano: 2018, plataforma: "PC, PS4, Switch", nota: 9.3, cores: ["#7b2fe0", "#111111"], descricao: "RPG por turnos do criador de Undertale, em capítulos." },
-  { id: 1378, titulo: "League of Legends", categoria: "RPG", ano: 2015, plataforma: "PC, celular", nota: 7.0, cores: ["#f2d600", "#2f8cbd"], 
+  { id: 1378, titulo: "League of Legends", categoria: "Battle Royale", ano: 2015, plataforma: "PC, celular", nota: 7.0, cores: ["#f2d600", "#2f8cbd"], 
     descricao: "é um jogo eletrônico gratuito de estratégia em equipe (MOBA) desenvolvido pela Riot Games, onde duas equipes de cinco jogadores competem para destruir a base inimiga." },
   //{ id: ????, titulo: "Qvarteto fl4cido", categoria: "Ação e Aventura", ano: 2024, plataforma: "resenha", nota: 10.0 , cores: ["#2f6b3a", "#f2a02f"], 
    // descricao: "um grupo de amigos mais resenhudos da escola o / MASCULO / XERECUDO / ANÃO / CACIQUE /." }
